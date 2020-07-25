@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Computational Toolkit for Educational Scientists" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Computational tools useful for researchers in the education sciences." />
+<meta name="github-repo" content="zief0002/modeling" />
+
+<meta name="author" content="Andrew Zieffler" />
+
+<meta name="date" content="2020-07-25" />
+
+
+<meta name="description" content="Computational tools useful for researchers in the education sciences.">
+
+<title>Computational Toolkit for Educational Scientists</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+<link rel="stylesheet" href="style/table-styles.css" type="text/css" />
+<link rel="stylesheet" href="style/syntax.css" type="text/css" />
+<link rel="stylesheet" href="style/navbar.css" type="text/css" />
+<link rel="stylesheet" href="style/notes.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#foreword">Foreword</a></li>
+<li><a href="statistical-computation.html#statistical-computation">Statistical Computation</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="header">
+<h1 class="title">Computational Toolkit for Educational Scientists</h1>
+<h4 class="author"><em>Andrew Zieffler</em></h4>
+<h4 class="date"><em>2020-07-25</em></h4>
+</div>
+<div id="foreword" class="section level1">
+<h1>Foreword</h1>
+<p>I am putting this out there primarily as a resource for my own students to help them through the installation of the tools we use in the courses I teach. As such, I will initially focus on R and RStudio, but I will probably add tools (e.g., reference managers, github, make) over time as I have time. (Note: If you want to contribute to this, create a Pull Request or <a href="mailto:%20zief0002@umn.edu">send me an email</a>.) Also, feel free to offer criticism, suggestion, and feedback. You can either <a href="https://github.com/zief0002/modeling/issues">open an issue</a> on the book’s github page or <a href="mailto:%20zief0002@umn.edu">send me an email</a> directly.</p>
+<p><br /></p>
+<p>Andrew Zieffler</p>
+<p><a href="mailto:zief0002@umn.edu" class="email">zief0002@umn.edu</a></p>
+<p><br /> <br /></p>
+<div id="colophon" class="section level2">
+<h2>Colophon</h2>
+<p>Artwork by <a href="https://twitter.com/allison_horst">@allison_horst</a></p>
+<p>Icon and note ideas and prototypes by <a href="http://desiree.rbind.io/">Desirée De Leon</a>.</p>
+<p>The book is typeset using <a href="https://fonts.google.com/specimen/Crimson+Text">Crimson Text</a> for the body font, <a href="https://fonts.google.com/specimen/Raleway">Raleway</a> for the headings and <a href="https://fonts.google.com/specimen/Sue+Ellen+Francisco">Sue Ellen Francisco</a> for the title. The color palette was generated using <a href="https://coolors.co/">coolors.co</a>.</p>
+<p><strong>Statistical Computing</strong></p>
+<ul>
+<li>Laptop icon made by <a href="https://www.flaticon.com/authors/tomas-knop">Tomas Knop</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a></li>
+<li>Directory icon made by <a href="https://www.flaticon.com/authors/darius-dan">Darius Dan</a> from <a href="https://www.flaticon.com/">www.flaticon.com</a></li>
+</ul>
+<!-- <br /><br /> -->
+<!-- ## Acknowledgments -->
+<!-- Many thanks to all the students in my courses who have been through previous iterations of this material. Your feedback has been invaluable, and you are the world's greatest copyeditors. In particular, I would like to thank the following students who have gone above and beyond in the feedback they have provided: Jonathan Brown, Amaniel Mrutu, Corrisa Rohloff, and Mireya Smith. -->
+<p><br /><br /></p>
+
+</div>
+</div>
+<p style="text-align: center;">
+<a href="statistical-computation.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

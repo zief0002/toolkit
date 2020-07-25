@@ -1,0 +1,11 @@
+book_filename: "Toolkit for Quantitative Methodologists"
+chapter_name: ""
+repo: https://github.com/zief0002/toolkit
+output_dir: docs
+rmd_files: [
+    "index.Rmd",
+    "01-statistical-computation.Rmd",
+    "99-references.Rmd"
+    ]
+clean: [toolkit.bib, bookdown.bbl]
+new_session: yes
