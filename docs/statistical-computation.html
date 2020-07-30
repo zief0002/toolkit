@@ -14,7 +14,7 @@
 
 <meta name="author" content="Andrew Zieffler" />
 
-<meta name="date" content="2020-07-25" />
+<meta name="date" content="2020-07-27" />
 
 
 <meta name="description" content="Computational tools useful for researchers in the education sciences.">
@@ -30,76 +30,6 @@
 <script src="libs/navigation-1.1/tabsets.js"></script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  { color: #cccccc; background-color: #303030; }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ffcfaf; } /* Alert */
-code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #dca3a3; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #f0dfaf; } /* ControlFlow */
-code span.ch { color: #dca3a3; } /* Char */
-code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
-code span.co { color: #7f9f7f; } /* Comment */
-code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
-code span.do { color: #7f9f7f; } /* Documentation */
-code span.dt { color: #dfdfbf; } /* DataType */
-code span.dv { color: #dcdccc; } /* DecVal */
-code span.er { color: #c3bf9f; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #c0bed1; } /* Float */
-code span.fu { color: #efef8f; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
-code span.kw { color: #f0dfaf; } /* Keyword */
-code span.op { color: #f0efd0; } /* Operator */
-code span.ot { color: #efef8f; } /* Other */
-code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
-code span.sc { color: #dca3a3; } /* SpecialChar */
-code span.ss { color: #cc9393; } /* SpecialString */
-code span.st { color: #cc9393; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #cc9393; } /* VerbatimString */
-code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
-</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <link rel="stylesheet" href="style/style.css" type="text/css" />
@@ -136,6 +66,8 @@ img {
 <ul>
 <li><a href="index.html#foreword">Foreword</a></li>
 <li><a href="statistical-computation.html#statistical-computation">Statistical Computation</a></li>
+<li><a href="r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup">R and RStudio: Installation and Setup</a></li>
+<li><a href="getting-started-with-r.html#getting-started-with-r">Getting Started with R</a></li>
 <li><a href="references.html#references">References</a></li>
 </ul>
 </div>
@@ -145,183 +77,26 @@ img {
 <div class="col-sm-12">
 <div id="statistical-computation" class="section level1">
 <h1>Statistical Computation</h1>
-<p>The first set of tools we will discuss will be related to statistical computation. Specifically, I am going to focus on R and RStudio here. R is a free software environment for statistical computing and graphics. It can be installed on a variety of operating systems, including the MacOS, Windows, and UNIX platforms. RStudio is an open-source front-end<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to running R that makes it easier to work with and compute with R.</p>
-<p>Although you will need to install both R and RStudio, once they are installed you will only interact with RStudio when you compute.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="figs/01-rstudio-and-r.png" alt="Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio." width="60%" />
-<p class="caption">
-Figure 1: Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio.
-</p>
-</div>
-<p><br /><br /></p>
-<div id="installing-r-and-rstudio" class="section level2">
-<h2>Installing R and RStudio</h2>
-<p>The next sections will walk you through the installation of R and RStudio. The process will be to install R first, and then install RStudio.</p>
-<p><br /><br /></p>
-<div id="installing-r" class="section level3">
-<h3>Installing R</h3>
-<p>To install R, navigate your web browser to:</p>
-<p style="margin-left:auto; margin-right:auto;">
-<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>
-</p>
-<p>Then,</p>
+<p>The first set of tools we will discuss will be related to statistical computation. Although there are many computational tools for statistical analysis, the first tools we will add to your computational toolkit is R. R is a free software environment for statistical computing and graphics. It can be installed on a variety of operating systems, including the MacOS, Windows, and UNIX platforms. To really make use of the computational power of R, we are also going to introduce you to RStudio, an open-source front-end<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> to R.</p>
+<p>The initial chapters of this document will address:</p>
 <ul>
-<li>Click the <code>CRAN</code> link under <code>Download</code> on the left-hand side of the page.</li>
-<li>Select a mirror site. These should all be the same, but I tend to choose the <code>Iowa State University</code> link under <code>USA</code>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
-<li>In the <code>Download and Install R</code> box, choose the binary that matches the operating system (OS) for your computer.</li>
-</ul>
-<p>This is where the installation directions diverge depending on your OS.</p>
-<p><strong>Mac Instructions</strong></p>
-<p>So long as you are running MacOS 10.13 or higher just click the first link for the PKG, which will download the installer for the most current version of R (4.0.2 as of July 24, 2020). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<p>If you are running an older version of MacOS, click the <code>el-capitan/base</code> link (near the bottom of the page) and then select the PKG link for R 3.6.3. Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<p>If you are unsure which version of the MacOS is running on your computer, select <code>About this Mac</code> from the Apple menu in your toolbar.</p>
-<p><strong>Windows Instructions</strong></p>
-<p>Click the link that says <code>Install R for the first time</code> (or click <code>base</code>; they go to the same place). Then click the <code>Download R 4.0.2 for Windows</code> link, which will download the installer for the most current version of R (4.0.2 as of July 24, 2020). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
-<p><strong>Linux Instructions</strong></p>
-<p>If you are running Linux, you should know how to install things on your computer. 😀</p>
-<p><br /><br /></p>
-</div>
-<div id="installing-rstudio-desktop" class="section level3">
-<h3>Installing RStudio Desktop</h3>
-<p>After you have installed R, you next need to install RStudio. To do this, navigate your web browser to:</p>
-<p style="margin-left:auto; margin-right:auto;">
-<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>
-</p>
-<p>Then,</p>
-<ul>
-<li>Select the blue <code>Download</code> button under the free, open-source version of RStudio Desktop.</li>
-<li>Select the installer associated with your computer’s OS.</li>
-<li>Once the download completes, open the installer and follow the directions to install RStudio Desktop on your computer.</li>
+<li>Installing R and RStudio;</li>
+<li>Getting started with R’s computational syntax;</li>
+<li>Wrangling data using functions from the <strong>dplyr</strong> package; and</li>
+<li>Visualizing data using functions from the <strong>ggplot2</strong> package.</li>
 </ul>
 <p><br /><br /></p>
-</div>
-<div id="checking-that-things-worked" class="section level3">
-<h3>Checking that Things Worked</h3>
-<p>From your Applications or Programs folder, open RStudio. If you have successfully downloaded both programs, this should open the application and you should see a message indicating that you are using “R version 4.0.2” in the console pane.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-3"></span>
-<img src="figs/02-opening-rstudio.png" alt="Once you open RStudio, you should see a message indicating that you are using `R version 4.0.2` in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here." width="100%" />
-<p class="caption">
-Figure 2: Once you open RStudio, you should see a message indicating that you are using <code>R version 4.0.2</code> in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.
-</p>
-</div>
-<p><br /><br /></p>
-</div>
-</div>
-<div id="customizing-rstudio" class="section level2">
-<h2>Customizing RStudio</h2>
-<p>While the information in this section is not crucial for making things work, it is useful to get RStudio looking good and setting some default settings. Open the <code>Tools &gt; Options</code> menu (Windows) or <code>RStudio &gt; Preferences</code> (Mac).</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<img src="figs/06-options.png" alt="The RStudio options/preferences menu has many settings to customize RStudio." width="50%" />
-<p class="caption">
-Figure 3: The RStudio options/preferences menu has many settings to customize RStudio.
-</p>
-</div>
-<ul>
-<li>In the <code>General</code> settings (<code>Basic</code>), change the option on “Save workspace to .Rdata on exit” to be “Never”. Click the “Apply” button.</li>
-<li>In the <code>Appearance</code> settings, customize the look of RStudio to something aesthetically appealing to you. When you are finished, click the “Apply” button.</li>
-<li>There are also options you can set in the <code>Accessibility</code> settings if you use a screen reader. If you change anything, don’t forget to click the “Apply” button.</li>
-</ul>
-<p>When you are finished customizing RStudio, click the “OK” button.</p>
-<p><br /><br /></p>
-</div>
-<div id="installing-and-loading-r-packages" class="section level2">
-<h2>Installing and Loading R Packages</h2>
-<p>Every R function is housed in a package (or library). You can see the packages (and which version of each package) are installed by examining the <code>Packages</code> tab in RStudio.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<img src="figs/03-package-tab.png" alt="Clicking the packages tab shows which packages are installed. The list of packages you have installed will likely be different. The version number is also shown." width="50%" />
-<p class="caption">
-Figure 4: Clicking the packages tab shows which packages are installed. The list of packages you have installed will likely be different. The version number is also shown.
-</p>
-</div>
-<p>Twenty-nine packages were included when you installed R on your computer. When you start an R session by opening RStudio, some of those packages are also loaded into memory.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<img src="figs/04-default-packages.png" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory." width="70%" />
-<p class="caption">
-Figure 5: The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.
-</p>
-</div>
-<p>To load a package that you have installed, you use the <code>library()</code> function and include the name of the package you want to load in as the sole argument. For example, to load the grid package, use the following syntax:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="statistical-computation.html#cb1-1"></a><span class="kw">library</span>(grid)</span></code></pre></div>
-<p>Some packages requires other packages (dependencies) to work. For example, the <strong>survival</strong> package is dependent on the <strong>splines</strong> package. When you load packages that have dependencies, R will also load the dependencies (assuming you have them installed). When it does this, a message will be printed after you execute <code>library()</code>. For example, here is what happens when we load the <strong>survival</strong> package.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="statistical-computation.html#cb2-1"></a><span class="kw">library</span>(survival)</span></code></pre></div>
-<p>Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session.</p>
-<p>Sometimes you will get a message about objects being <em>masked</em>. This is not a problem. It is just informative and means that the package you just loaded has a function that has the <em>exact same name</em> as a previously loaded package. If you use that particular function, the most recently loaded package’s version of the function will be used.</p>
-<p><br /><br /></p>
-<div id="adding-functionality-installing-packages" class="section level3">
-<h3>Adding Functionality: Installing Packages</h3>
-<p>You can also install other packages onto your R system. R, in fact, has a repository called CRAN<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>, that includes 16,000 different packages (as of July 2020). The easiest way to install a package from CRAN onto your computer is to use the <code>Install</code> button in the `Packages tab of RStudio.</p>
-<p>This will open a pop-up window where you can type the CRAN package you want to install in a text box. Ensure that the “Install dependencies” box is checked (this will also install any package dependencies), and then click “Install”.</p>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<img src="figs/05-install-package.png" alt="Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked." width="50%" />
-<p class="caption">
-Figure 6: Pop-up window to install packages. Here we are installing the dplyr package. Note that the ‘Install dependencies’ box is checked.
-</p>
-</div>
-<p>You may be prompted to choose a nearest mirror. If so, choose a mirror location. If you are successful in installing the package, you will get a message like the following:</p>
-<pre><code>Installing package into ‘/Users/zief0002/Library/R/4.0/library’
-(as ‘lib’ is unspecified)
-trying URL &#39;https://cran.rstudio.com/bin/macosx/contrib/4.0/dplyr_1.0.0.tgz&#39;
-Content type &#39;application/x-gzip&#39; length 1209135 bytes (1.2 MB)
-==================================================
-downloaded 1.2 MB
 
-
-The downloaded binary packages are in
-    /var/folders/s3/sqlc9xw92w54166w86dgkd000000gr/T//Rtmps80Uf8/downloaded_packages</code></pre>
-<p>The message you get on Windows may be slightly different, but the key is that there is not an error. Furthermore, you should immediately be able to load the package using the <code>library()</code> function.</p>
-<p>An equivalent manner of installing a package via syntax is to use the <code>install.packages()</code> function. For example, to install the <strong>dplyr</strong> package we could have used the following syntax:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="statistical-computation.html#cb4-1"></a><span class="kw">install.pacckages</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<p>Note that the name of the package is included in quotation marks (it is a character string). The argument <code>dependencies=TRUE</code> installs all package dependencies, similar to checking the “Install dependencies” box in the pop-up menu.</p>
-<p><br /><br /></p>
-<div id="installing-packages-from-github" class="section level4">
-<h4>Installing Packages from GitHub</h4>
-<p>CRAN is not the only place to get R packages. Many developers add packages to a website called <a href="https://github.com/">GitHub</a>. Packages hosted on GitHub can be installed using the <code>install_github()</code> function from the <strong>remotes</strong> package.</p>
-<p>First, you will need to install the <strong>remotes</strong> package from CRAN and then load it using the <code>library()</code> function. Then, you can use the <code>install_github()</code> function to actually install the package. This function is provided a character string that specifies the user name and GitHub repository for the package, separated by a slash. You can find this in the part of the URL that follows “<a href="https://github.com/" class="uri">https://github.com/</a>” in your web browser. For example, the URL for the <strong>educate</strong> package is: “<a href="https://github.com/zief0002/educate" class="uri">https://github.com/zief0002/educate</a>”, so to install this we would use:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="statistical-computation.html#cb5-1"></a><span class="co"># Load remotes package</span></span>
-<span id="cb5-2"><a href="statistical-computation.html#cb5-2"></a><span class="kw">library</span>(remotes)</span>
-<span id="cb5-3"><a href="statistical-computation.html#cb5-3"></a></span>
-<span id="cb5-4"><a href="statistical-computation.html#cb5-4"></a><span class="co"># Install dplyr from GitHub</span></span>
-<span id="cb5-5"><a href="statistical-computation.html#cb5-5"></a><span class="kw">install_github</span>(<span class="st">&quot;zief0002/educate&quot;</span>)</span></code></pre></div>
-<p>The message I get when installing this is</p>
-<pre><code>Installing package into ‘/Users/zief0002/Library/R/4.0/library’
-(as ‘lib’ is unspecified)
-* installing *source* package ‘educate’ ...
-** using staged installation
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-*** copying figures
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (educate)</code></pre>
-<p>The “DONE” message typically signified successful installation. Note that you may be prompted to update some packages. If you get this message, choose the option to update “ALL” packages. As with packages installed from CRAN, if things worked you should be able to load the package you just installed using the <code>library()</code> function without any errors.</p>
-<p><br /><br /></p>
-</div>
-</div>
-<div id="install-rtoolscommand-line-tools" class="section level3">
-<h3>Install Rtools/Command Line Tools</h3>
-<p>You may need to install some additional functionality to your system in order to get certain packages to install properly. On a Windows machine, you might need to install <em>Rtools</em>. Mac users might need to add the <em>Command Line Tools</em>. These tools also allow you to write and compile your own R packages. RStudio has well written instructions for adding these tools at: <a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites" class="uri">https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites</a>.</p>
-<p><br /><br /></p>
-
-</div>
-</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="1">
 <li id="fn1"><p>Specifically, RStudio is branded as an “integrated development environment (IDE) [that] includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.”<a href="statistical-computation.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>When internet used to be dial-up (i.e., super slow, you wanted to choose a mirror site that was closest in proximity to your location as it sped up the download. This is less of a concern now that internet download speeds are much faster.<a href="statistical-computation.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>“CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.”<a href="statistical-computation.html#fnref3" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <p style="text-align: center;">
 <a href="index.html"><button class="btn btn-default">Previous</button></a>
-<a href="references.html"><button class="btn btn-default">Next</button></a>
+<a href="r-and-rstudio-installation-and-setup.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

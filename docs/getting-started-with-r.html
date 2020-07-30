@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Getting Started with R | Computational Toolkit for Educational Scientists" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Computational tools useful for researchers in the education sciences." />
+<meta name="github-repo" content="zief0002/modeling" />
+
+<meta name="author" content="Andrew Zieffler" />
+
+<meta name="date" content="2020-07-27" />
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+
+<meta name="description" content="Computational tools useful for researchers in the education sciences.">
+
+<title>Getting Started with R | Computational Toolkit for Educational Scientists</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  { color: #cccccc; background-color: #303030; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ffcfaf; } /* Alert */
+code span.an { color: #7f9f7f; font-weight: bold; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #dca3a3; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #f0dfaf; } /* ControlFlow */
+code span.ch { color: #dca3a3; } /* Char */
+code span.cn { color: #dca3a3; font-weight: bold; } /* Constant */
+code span.co { color: #7f9f7f; } /* Comment */
+code span.cv { color: #7f9f7f; font-weight: bold; } /* CommentVar */
+code span.do { color: #7f9f7f; } /* Documentation */
+code span.dt { color: #dfdfbf; } /* DataType */
+code span.dv { color: #dcdccc; } /* DecVal */
+code span.er { color: #c3bf9f; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #c0bed1; } /* Float */
+code span.fu { color: #efef8f; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #7f9f7f; font-weight: bold; } /* Information */
+code span.kw { color: #f0dfaf; } /* Keyword */
+code span.op { color: #f0efd0; } /* Operator */
+code span.ot { color: #efef8f; } /* Other */
+code span.pp { color: #ffcfaf; font-weight: bold; } /* Preprocessor */
+code span.sc { color: #dca3a3; } /* SpecialChar */
+code span.ss { color: #cc9393; } /* SpecialString */
+code span.st { color: #cc9393; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #cc9393; } /* VerbatimString */
+code span.wa { color: #7f9f7f; font-weight: bold; } /* Warning */
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+<link rel="stylesheet" href="style/table-styles.css" type="text/css" />
+<link rel="stylesheet" href="style/syntax.css" type="text/css" />
+<link rel="stylesheet" href="style/navbar.css" type="text/css" />
+<link rel="stylesheet" href="style/notes.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#foreword">Foreword</a></li>
+<li><a href="statistical-computation.html#statistical-computation">Statistical Computation</a></li>
+<li><a href="r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup">R and RStudio: Installation and Setup</a></li>
+<li><a href="getting-started-with-r.html#getting-started-with-r">Getting Started with R</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="getting-started-with-r" class="section level1">
+<h1>Getting Started with R</h1>
+<p>In this chapter, you will be get started writing and working with R syntax. The ideas introduced will be useful as you interact with statistical computation, whether it be to carry out data analysis, or to write your own R program or package. To begin,</p>
+<ul>
+<li>Open a new session in RStudio.</li>
+</ul>
+<p>A “session” is the terminology we use to describe the duration from opening RStudio to closing RStudio. You can begin a new R session by either opening the RStudio application on your computer, or, if you are already in an existing R session, by selecting <code>Session &gt; New Session</code> from the RStudio menu.</p>
+<p><br /><br /></p>
+<div id="computing-in-the-console" class="section level2">
+<h2>Computing in the Console</h2>
+<p>There are a several ways to interact with R within RStudio. One of those methods is to issue commands in the RStudio console pane. Computing in the console is similar to working with a calculator: you enter syntax and R runs the syntax. The <code>&gt;</code> symbol in the console pane is called the “R prompt” and is prompting you to enter syntax. After you enter any syntax, you hit the <return> or <enter> key to execute the syntax.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/08-console.png" alt="The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the &lt;return&gt; or &lt;enter&gt; key." width="60%" />
+<p class="caption">
+The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the <return> or <enter> key.
+</p>
+</div>
+<p>To get started, we will have R carry out some arithmetic. At the prompt enter each of the following lines of syntax. After each line, hit the <return> or <enter> key.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="getting-started-with-r.html#cb1-1"></a><span class="co"># Addition</span></span>
+<span id="cb1-2"><a href="getting-started-with-r.html#cb1-2"></a><span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">3</span></span>
+<span id="cb1-3"><a href="getting-started-with-r.html#cb1-3"></a></span>
+<span id="cb1-4"><a href="getting-started-with-r.html#cb1-4"></a><span class="co"># Subtraction</span></span>
+<span id="cb1-5"><a href="getting-started-with-r.html#cb1-5"></a><span class="dv">6</span> <span class="op">-</span><span class="st"> </span><span class="dv">10</span></span>
+<span id="cb1-6"><a href="getting-started-with-r.html#cb1-6"></a></span>
+<span id="cb1-7"><a href="getting-started-with-r.html#cb1-7"></a><span class="co"># Multiplication</span></span>
+<span id="cb1-8"><a href="getting-started-with-r.html#cb1-8"></a><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span></span>
+<span id="cb1-9"><a href="getting-started-with-r.html#cb1-9"></a></span>
+<span id="cb1-10"><a href="getting-started-with-r.html#cb1-10"></a><span class="co"># Division</span></span>
+<span id="cb1-11"><a href="getting-started-with-r.html#cb1-11"></a><span class="dv">23</span> <span class="op">/</span><span class="st"> </span><span class="dv">2</span></span>
+<span id="cb1-12"><a href="getting-started-with-r.html#cb1-12"></a></span>
+<span id="cb1-13"><a href="getting-started-with-r.html#cb1-13"></a><span class="co"># Exponents</span></span>
+<span id="cb1-14"><a href="getting-started-with-r.html#cb1-14"></a><span class="dv">10</span> <span class="op">^</span><span class="st"> </span><span class="dv">3</span></span></code></pre></div>
+<p>Executing each line of syntax returns the results of the computation in the console pane. The result, in R parlance, is referred to as a “returned value”. After executing the computation, the R prompt reappears and you can issue a new line of syntax.</p>
+<p><strong>Continuation Prompt:</strong> At some point in your computational career, you will likely encounter the continuation prompt. Symbolized by <code>+</code>, this prompt appears instead of the R prompt to indicate that you did not complete the syntax you entered prior to hitting the <enter> key. For example, suppose while entering the division syntax from above you got excited and hit the <enter> key after inputting the slash; before inputting the “2”. You would see the continuation prompt:</p>
+<pre><code>&gt; 23 /
++ </code></pre>
+<p>The continuation prompt tells you that the syntax you started to enter is still active. If you now enter “2” and hit the <enter> key, the syntax will be executed as if you hadn’t inadvertently hit <enter> in the middle of the computation. If you are in the middle of a more complex piece of syntax, you could also hit the <esc> key until the R prompt is re-shown. Then you can start the computation over.</p>
+<p><strong>Space in Syntax:</strong> For the computation in R, space is irrelevant. For example, each of the following syntactical statements is equivalent:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="getting-started-with-r.html#cb3-1"></a><span class="dv">4</span> <span class="op">*</span><span class="st"> </span><span class="dv">5</span></span>
+<span id="cb3-2"><a href="getting-started-with-r.html#cb3-2"></a><span class="dv">4</span><span class="op">*</span><span class="dv">5</span></span>
+<span id="cb3-3"><a href="getting-started-with-r.html#cb3-3"></a><span class="dv">4</span>    <span class="op">*</span><span class="st">            </span><span class="dv">5</span></span></code></pre></div>
+<p>That being said, well-written code includes space! Space in code makes it easier to read and debug, in the same way that including space in written prose helps us read and parse words, sentences, and paragraphs.</p>
+<p><br /><br /></p>
+</div>
+<div id="functions-the-workhorse-of-r" class="section level2">
+<h2>Functions: The Workhorse of R</h2>
+<p>Almost all commands in R are built around the use of a function. Functions carry out operations on their inputs (called <em>arguments</em>) and produce an output (called a <em>returned value</em>).</p>
+<div class="figure" style="text-align: center">
+<img src="figs/09-function-machine.png" alt="LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5." width="60%" />
+<p class="caption">
+LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5.
+</p>
+</div>
+<p>The syntax for using most functions in R follows a simple structure: The name of the function is followed by a pair of parentheses. Argument values (inputs) are specified inside the parentheses. In general,</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="getting-started-with-r.html#cb4-1"></a><span class="kw">function_name</span>(argument)</span></code></pre></div>
+<p>Below are several example of this structure for some common mathematical functions.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="getting-started-with-r.html#cb5-1"></a><span class="co">#Square root</span></span>
+<span id="cb5-2"><a href="getting-started-with-r.html#cb5-2"></a><span class="kw">sqrt</span>(<span class="dv">100</span>)</span></code></pre></div>
+<pre><code>[1] 10</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="getting-started-with-r.html#cb7-1"></a><span class="co">#Absolute value</span></span>
+<span id="cb7-2"><a href="getting-started-with-r.html#cb7-2"></a><span class="kw">abs</span>(<span class="op">-</span><span class="dv">23</span>)</span></code></pre></div>
+<pre><code>[1] 23</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="getting-started-with-r.html#cb9-1"></a><span class="co">#Factorial</span></span>
+<span id="cb9-2"><a href="getting-started-with-r.html#cb9-2"></a><span class="kw">factorial</span>(<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>[1] 120</code></pre>
+<p>Functions can take multiple arguments (inputs). If there is more than one argument, the arguments are always separated by a comma.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="getting-started-with-r.html#cb11-1"></a><span class="kw">function_name</span>(argument_<span class="dv">1</span>, argument_<span class="dv">2</span>, ...)</span></code></pre></div>
+<p>For example, the <code>seq()</code> function creates a sequence of values that have a particular start and end value.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="getting-started-with-r.html#cb12-1"></a><span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>[1] 1 2 3 4 5</code></pre>
+<p>Note that the order of the arguments matters! Reversing the order of the arguments inputted to the <code>seq()</code> function returns different output.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="getting-started-with-r.html#cb14-1"></a><span class="kw">seq</span>(<span class="dv">5</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>[1] 5 4 3 2 1</code></pre>
+<p>Each of the arguments actually has a name, and if those names are used to assign the values we are inputting to the function, then the order of the arguments is irrelevant.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="getting-started-with-r.html#cb16-1"></a><span class="co"># Named arguments</span></span>
+<span id="cb16-2"><a href="getting-started-with-r.html#cb16-2"></a><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>[1] 1 2 3 4 5</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="getting-started-with-r.html#cb18-1"></a><span class="co"># Order no longer matters</span></span>
+<span id="cb18-2"><a href="getting-started-with-r.html#cb18-2"></a><span class="kw">seq</span>(<span class="dt">to =</span> <span class="dv">5</span>, <span class="dt">from =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>[1] 1 2 3 4 5</code></pre>
+<p>It is a good habit to use named arguments when you are writing your syntax. It makes the code more readable and easier to adapt if you come back to it later. Sometimes when the initial argument of a function is well-established, that first argument is left unnamed, but all other arguments used are named. A good example of this is the use of the <code>lm()</code> function in which the initial <code>formula=</code> argument is typically unnamed, but other arguments (e.g., <code>data=</code>) are named.</p>
+<p><br /><br /></p>
+</div>
+<div id="connecting-computations" class="section level2">
+<h2>Connecting Computations</h2>
+<p>One powerful aspect of computing is that the output from a function can be used as input into another function. This is akin to calculations you may have encountered in mathematics course like algebra. For example,</p>
+<p><span class="math display">\[
+\sqrt{\log(100)}
+\]</span></p>
+<p>In carrying out this calculation, you would first compute the logarithm of 100 and then take the square root of that result. Using function notation, your algebra teacher might have written</p>
+<p><span class="math display">\[
+g(~f(x)~)
+\]</span>
+where <span class="math inline">\(f(x)\)</span> is the logarithm function and <span class="math inline">\(g(x)\)</span> is the square root function. Regardless of how we express this,the idea is that the output of the logarithm function is used as input to the square root function. Using R, there are two primary ways to connect computations in this manner: chaining and assignment.</p>
+<p><br /><br /></p>
+<div id="chaining" class="section level3">
+<h3>Chaining</h3>
+<p>Chaining is a direct reflection of the functional notation <span class="math inline">\(g(~f(x)~)\)</span> in that you embed one computation directly in another. For example, to find the absolute value of all the integers between <span class="math inline">\(-5\)</span> and <span class="math inline">\(-1\)</span>, we can chain the <code>abs()</code> function and the <code>seq()</code> functions:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="getting-started-with-r.html#cb20-1"></a><span class="kw">abs</span>( <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">-5</span>, <span class="dt">to =</span> <span class="dv">-1</span>) )</span></code></pre></div>
+<pre><code>[1] 5 4 3 2 1</code></pre>
+<p>Note here that the output/returned value is not a single value, but five values. The absolute value function was applied to each of the values in the sequence. Compare this to the result from the following chained computations:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="getting-started-with-r.html#cb22-1"></a><span class="kw">mean</span>( <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">-5</span>, <span class="dt">to =</span> <span class="dv">-1</span>) )</span></code></pre></div>
+<pre><code>[1] -3</code></pre>
+<p>Here the mean function applied to the sequence of values returns a single value as output. When a function is applied to a set of multiple values (i.e., a vector), some functions will apply their computations separately on each element/value (<em>element-wise computation</em> returns multiple values), while others will apply the computation to the set of elements as a whole (<em>vector-wise computation</em> returns a single value). Most of the time it will be clear from the function name or description whether the output returns a single value or multiple values.</p>
+<p>We can chain as many computations together as we would like. For example here we find the square root of the absolute value of all the integers between <span class="math inline">\(-5\)</span> and <span class="math inline">\(-1\)</span>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="getting-started-with-r.html#cb24-1"></a><span class="kw">sqrt</span>( <span class="kw">abs</span>( <span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">-5</span>, <span class="dt">to =</span> <span class="dv">-1</span>) ) )</span></code></pre></div>
+<pre><code>[1] 2.236068 2.000000 1.732051 1.414214 1.000000</code></pre>
+<p><br /><br /></p>
+</div>
+<div id="assignment" class="section level3">
+<h3>Assignment</h3>
+<p>We can also connect computations through <em>assignment</em>. With assignment, we store the output of a computation by assigning it to a named object. We can then use that named object in another computation. For example, here we first store the integers between <span class="math inline">\(-5\)</span> and <span class="math inline">\(-1\)</span> in an object called <code>chili</code>. Then we find the absolute value of each value by using <code>chili</code> as the argument in the <code>abs()</code> function.</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="getting-started-with-r.html#cb26-1"></a><span class="co"># Assign the sequence to the object chili</span></span>
+<span id="cb26-2"><a href="getting-started-with-r.html#cb26-2"></a>chili =<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">-5</span>, <span class="dt">to =</span> <span class="dv">-1</span>) </span>
+<span id="cb26-3"><a href="getting-started-with-r.html#cb26-3"></a></span>
+<span id="cb26-4"><a href="getting-started-with-r.html#cb26-4"></a><span class="co"># Compute the absolute values</span></span>
+<span id="cb26-5"><a href="getting-started-with-r.html#cb26-5"></a><span class="kw">abs</span>(chili)</span></code></pre></div>
+<pre><code>[1] 5 4 3 2 1</code></pre>
+<p>To view the contents of an object, just print the name of the object. Below, after creating the object <code>sadie</code>, we view its contents.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="getting-started-with-r.html#cb28-1"></a><span class="co"># Assign values to sadie</span></span>
+<span id="cb28-2"><a href="getting-started-with-r.html#cb28-2"></a>sadie =<span class="st"> </span><span class="kw">rep</span>(<span class="dv">3</span>, <span class="dt">times =</span> <span class="dv">5</span>) </span>
+<span id="cb28-3"><a href="getting-started-with-r.html#cb28-3"></a></span>
+<span id="cb28-4"><a href="getting-started-with-r.html#cb28-4"></a><span class="co"># View contents of sadie</span></span>
+<span id="cb28-5"><a href="getting-started-with-r.html#cb28-5"></a>sadie</span></code></pre></div>
+<pre><code>[1] 3 3 3 3 3</code></pre>
+<p>Pretty much any name can be used when you create an object, with some caveats: object names cannot begin with a digit nor include hyphens or spaces. Although they are legal object names, <code>chili</code> and <code>sadie</code> are not particularly good object names. Better object names would describe the contents of the object.</p>
+<p>In my own workflow, I tend to use all lowercase letters in my object names and I use underscores for word breaks. For example,</p>
+<ul>
+<li><code>ses</code>, <code>gpa</code>, <code>occupation</code></li>
+<li><code>act_math</code>, <code>mothers_educ</code></li>
+</ul>
+<p><br /><br /></p>
+</div>
+<div id="objects-in-the-r-working-environment" class="section level3">
+<h3>Objects in the R Working Environment</h3>
+<p>We can continue to use the objects you created (e.g., <code>chili</code> and <code>sadie</code>) in our computations, so long as the objects remain in our R working environment.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="getting-started-with-r.html#cb30-1"></a><span class="co"># Sum the pairwise elements of the two objects</span></span>
+<span id="cb30-2"><a href="getting-started-with-r.html#cb30-2"></a>chili <span class="op">+</span><span class="st"> </span>sadie</span></code></pre></div>
+<pre><code>[1] -2 -1  0  1  2</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="getting-started-with-r.html#cb32-1"></a><span class="co"># Sum all the elements in chili</span></span>
+<span id="cb32-2"><a href="getting-started-with-r.html#cb32-2"></a><span class="kw">sum</span>(chili)</span></code></pre></div>
+<pre><code>[1] -15</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="getting-started-with-r.html#cb34-1"></a><span class="co"># Product of all the elements in sadie</span></span>
+<span id="cb34-2"><a href="getting-started-with-r.html#cb34-2"></a><span class="kw">prod</span>(sadie)</span></code></pre></div>
+<pre><code>[1] 243</code></pre>
+<p>In RStudio you can see which objects are in your working environment by examining the <code>Environment</code> pane.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/10-environment.png" alt="The enivironment pane shows the objects in the R working environment. It also displays the object's class and gives a preview of the the contents." width="40%" />
+<p class="caption">
+The enivironment pane shows the objects in the R working environment. It also displays the object’s class and gives a preview of the the contents.
+</p>
+</div>
+<p>Not only does this pane indicate the name of the objects in the working environment, but is also displays each object’s class. In this case we can tell that <code>chili</code> is an integer vector and <code>sadie</code> is a numeric vector.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Moreover, we are told that each vector includes five elements, shown in the environment pane as <code>[1:5]</code>. Lastly, we are given a preview of each object’s contents. Since these vectors only contain five elements, we see all the values in the preview.</p>
+<p>You can also use syntax to obtain a list of objects that are in your working environment using the <code>ls()</code> function with no arguments.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="getting-started-with-r.html#cb36-1"></a><span class="co"># List the objects in working environment</span></span>
+<span id="cb36-2"><a href="getting-started-with-r.html#cb36-2"></a><span class="kw">ls</span>()</span></code></pre></div>
+<pre><code>[1] &quot;chili&quot; &quot;sadie&quot;</code></pre>
+<p>When an object name is re-used, the previous value of the object is lost.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="getting-started-with-r.html#cb38-1"></a><span class="co"># Assign the values 1 to 10 in chili</span></span>
+<span id="cb38-2"><a href="getting-started-with-r.html#cb38-2"></a>chili =<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>After assigning new values to <code>chili</code>, we can see the information in the environment pane has been updated to reflect the new contents of the object.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/11-environment-chili.png" alt="The object `chili` although still an integer vector, now includes 10 elements." width="40%" />
+<p class="caption">
+The object <code>chili</code> although still an integer vector, now includes 10 elements.
+</p>
+</div>
+<p>Any computations carried out with <code>chili</code> will use the new object.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="getting-started-with-r.html#cb39-1"></a><span class="co"># Sum all the elements in chili</span></span>
+<span id="cb39-2"><a href="getting-started-with-r.html#cb39-2"></a><span class="kw">sum</span>(chili)</span></code></pre></div>
+<pre><code>[1] 55</code></pre>
+<p>If you want the previous version of <code>chili</code> you need to re-create the object. If you close your R session all of the objects you created will be lost.</p>
+<p><br /><br /></p>
+</div>
+</div>
+<div id="script-files-recording-your-syntax" class="section level2">
+<h2>Script Files: Recording Your Syntax</h2>
+<p>It is important to be able to record the syntax you use. This acts as a way of “saving” your work, and it also acts as a record of the analysis for your collaborators in the spirit of reproducible work. One way to record the R syntax you use is to employ a <em>script file</em>. You can create a new script file by selecting <code>File &gt; New File &gt; R Script</code> from the RStudio menu bar. You can also obtain a new R script by clicking the <code>New File</code> icon (document with the plus-sign) on the tool bar and selecting <code>R Script</code>.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/12-new-script-file.png" alt="LEFT: Create a new script file using RStudio's `File` menu. RIGHT: Create a new script file by clicking on the `New File` icon in the toolbar." width="60%" />
+<p class="caption">
+LEFT: Create a new script file using RStudio’s <code>File</code> menu. RIGHT: Create a new script file by clicking on the <code>New File</code> icon in the toolbar.
+</p>
+</div>
+<p>Script files should only include your R syntax and comments. Script files should NOT include:</p>
+<ul>
+<li>prompts (&gt;)</li>
+<li>output</li>
+</ul>
+<p>Comments, which are human-readable annotations or explanations of the syntax, are written using the hashtag (<code>#</code>). These can be placed on their own line in the script file, or can be placed at the end of a line with syntax. The comment continues until you hit the <enter> key. Comments help other people understand your syntax and also act as a reminder for the future you of what your code actually does. Get is the habit of including comments in your syntax. Not only is it good coding practice, but it also will help you become familiar with and learn the R syntax as you describe the purpose of the syntax you are writing.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/13-script-file.png" alt="Example script file with comments." width="60%" />
+<p class="caption">
+Example script file with comments.
+</p>
+</div>
+<p>Script files can be saved and opened the same as any other document. So, no more worrying about losing your work or objects that you created when you close your R sesssion. Just open your saved script file, highlight the parts you want to re-run, and click the <code>Run</code> button!</p>
+<p><br /><br /></p>
+<div id="executing-syntax-from-a-script-file" class="section level3">
+<h3>Executing Syntax from a Script File</h3>
+<p>Not only does the script file record your syntax, but it can also act as the vehicle from which you run your R syntax. Syntax in the script file can be executed by highlighting it and pressing the <code>Run</code> button in the toolbar. You can run one line at a time, or highlight multiple lines and execute all of them sequentially.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/14-run-script.png" alt="To execute syntax from the script file, highlight the syntax you want to run and then click the `Run` button in the toolbar." width="80%" />
+<p class="caption">
+To execute syntax from the script file, highlight the syntax you want to run and then click the <code>Run</code> button in the toolbar.
+</p>
+</div>
+<p>Writing syntax directly in the script file and running it is a groovy workflow for using R. Writing syntax directly in the script file also saves you from having to copy-and-paste syntax you want to save from the console. In my own work, I use this workflow almost daily.</p>
+<p><br /><br /></p>
+</div>
+</div>
+<div id="installing-and-loading-r-packages" class="section level2">
+<h2>Installing and Loading R Packages</h2>
+<p>Every R function is housed in a package. To use the functions in a particular package, the package needs to be (1) installed, and (2) loaded into memory.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/07-install-vs-load.png" alt="Packages need to be installed and loaded." width="60%" />
+<p class="caption">
+Packages need to be installed and loaded.
+</p>
+</div>
+<p>You can see the packages (and which version of each package) are installed by examining the <code>Packages</code> tab in RStudio. Every package listed there has been installed. You will also be able to see the version number of the package that is installed. Some of those packages may be checked. These are the packages that are also loaded into memory.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/03-package-tab.png" alt="The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory." width="40%" />
+<p class="caption">
+The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.
+</p>
+</div>
+<p>Twenty-nine packages were included when you installed R on your computer. When you start an R session by opening RStudio, some of those packages are also loaded into memory.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/04-default-packages.png" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory." width="70%" />
+<p class="caption">
+The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.
+</p>
+</div>
+<p><br /><br /></p>
+<div id="loading-packages-into-memory" class="section level3">
+<h3>Loading Packages into Memory</h3>
+<p>To load a package that is installed, you use the <code>library()</code> function and include the name of the package you want to load in as the sole argument. For example, to load the <strong>splines</strong> package, use the following syntax:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="getting-started-with-r.html#cb41-1"></a><span class="kw">library</span>(splines)</span></code></pre></div>
+<p>Some packages requires other packages (dependencies) to work. For example, the <strong>lme4</strong> package is dependent on the <strong>Matrix</strong> package. When you load packages that have dependencies, R will also load the dependencies (assuming you have them installed). When it does this, a message will be printed after you execute <code>library()</code>. For example, here is what happens when we load the <strong>lme4</strong> package.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="getting-started-with-r.html#cb42-1"></a><span class="kw">library</span>(lme4)</span></code></pre></div>
+<pre><code>Loading required package: Matrix</code></pre>
+<div class="protip">
+<p>Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session.</p>
+</div>
+<p><br /><br /></p>
+<div id="masked-objects" class="section level4">
+<h4>Masked Objects</h4>
+<p>Sometimes you will get a message about objects being <em>masked</em>. This is not a problem. It is just informative and means that the package you just loaded has a function that has the <em>exact same name</em> as a previously loaded package. If you use that particular function, the most recently loaded package’s version of the function will be used. For example, after loading the <strong>dplyr</strong> library the following message is printed:</p>
+<pre><code>Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union</code></pre>
+<p>This tells me that the <strong>dplyr</strong> package includes six functions that have the same name as functions included in other packages that have already been loaded into memory (two from the <strong>stats</strong> package and four from the <strong>base</strong> package.) Since <strong>dplyr</strong> was the most recently loaded package, if you were to use the <code>filter()</code> function, R would use <strong>dplyr</strong>’s <code>filter()</code> function rather than that from the <strong>stats</strong> package<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p><br /><br /></p>
+</div>
+<div id="error-loading-a-package" class="section level4">
+<h4>Error Loading a Package</h4>
+<p>Once in a while, when loading a package, you may get an error. Don’t panic. There are two errors that are common. The first error you may get indicates that the package did not get installed. For example, if <strong>ggplot2</strong> were not installed, trying to use the <code>library()</code> function to load that package would result in an error.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="getting-started-with-r.html#cb45-1"></a><span class="kw">library</span>(ggplot2)</span></code></pre></div>
+<pre><code>Error in library(ggplot2) : there is no package called ‘ggplot2’</code></pre>
+<p>Simply install the package and then re-try loading it.</p>
+<p>The second error that you might run across when trying to load a package occurs when the installation did not include the package dependencies. For example,</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="getting-started-with-r.html#cb47-1"></a><span class="kw">library</span>(odbc)</span></code></pre></div>
+<pre><code>Error: package or namespace load failed for ‘odbc’ in loadNamespace(j &lt;- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
+there is no package called ‘Rcpp’</code></pre>
+<p>Again, don’t panic! Here the error message is saying that the <strong>Rcpp</strong> package is a dependency and it is not installed. To fix this, install the <strong>Rcpp</strong> package and then try again. (You may need to open a new R session first.) You may need to install more than one dependency, so just keep installing what is missing until it works.</p>
+<p><br /><br /></p>
+</div>
+</div>
+<div id="adding-functionality-installing-packages" class="section level3">
+<h3>Adding Functionality: Installing Packages</h3>
+<p>You can also install other packages onto your R system. R, in fact, has a repository called CRAN<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, that includes 16,000 different packages (as of July 2020). The easiest way to install a package from CRAN onto your computer is to use the <code>Install</code> button in the `Packages tab of RStudio.</p>
+<p>This will open a pop-up window where you can type the CRAN package you want to install in a text box. Ensure that the “Install dependencies” box is checked (this will also install any package dependencies), and then click “Install”.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/05-install-package.png" alt="Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked." width="50%" />
+<p class="caption">
+Pop-up window to install packages. Here we are installing the dplyr package. Note that the ‘Install dependencies’ box is checked.
+</p>
+</div>
+<p>You may be prompted to choose a nearest mirror. If so, choose a mirror location. If you are successful in installing the package, you will get a message like the following:</p>
+<pre><code>Installing package into ‘/Users/zief0002/Library/R/4.0/library’
+(as ‘lib’ is unspecified)
+trying URL &#39;https://cran.rstudio.com/bin/macosx/contrib/4.0/dplyr_1.0.0.tgz&#39;
+Content type &#39;application/x-gzip&#39; length 1209135 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+
+The downloaded binary packages are in
+    /var/folders/s3/sqlc9xw92w54166w86dgkd000000gr/T//Rtmps80Uf8/downloaded_packages</code></pre>
+<p>The message you get on Windows may be slightly different, but the key is that there is not an error. Furthermore, you should immediately be able to load the package using the <code>library()</code> function.</p>
+<p>An equivalent manner of installing a package via syntax is to use the <code>install.packages()</code> function. For example, to install the <strong>dplyr</strong> package we could have used the following syntax:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="getting-started-with-r.html#cb50-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<p>Note that the name of the package is included in quotation marks (it is a character string). The argument <code>dependencies=TRUE</code> installs all package dependencies, similar to checking the “Install dependencies” box in the pop-up menu.</p>
+<p><br /><br /></p>
+<div id="installing-packages-from-github" class="section level4">
+<h4>Installing Packages from GitHub</h4>
+<p>CRAN is not the only place to get R packages. Many developers add packages to a website called <a href="https://github.com/">GitHub</a>. Packages hosted on GitHub can be installed using the <code>install_github()</code> function from the <strong>remotes</strong> package.</p>
+<p>First, you will need to install the <strong>remotes</strong> package from CRAN and then load it using the <code>library()</code> function. Then, you can use the <code>install_github()</code> function to actually install the package. This function is provided a character string that specifies the user name and GitHub repository for the package, separated by a slash. You can find this in the part of the URL that follows “<a href="https://github.com/" class="uri">https://github.com/</a>” in your web browser. For example, the URL for the <strong>educate</strong> package is: “<a href="https://github.com/zief0002/educate" class="uri">https://github.com/zief0002/educate</a>”, so to install this we would use:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="getting-started-with-r.html#cb51-1"></a><span class="co"># Load remotes package</span></span>
+<span id="cb51-2"><a href="getting-started-with-r.html#cb51-2"></a><span class="kw">library</span>(remotes)</span>
+<span id="cb51-3"><a href="getting-started-with-r.html#cb51-3"></a></span>
+<span id="cb51-4"><a href="getting-started-with-r.html#cb51-4"></a><span class="co"># Install dplyr from GitHub</span></span>
+<span id="cb51-5"><a href="getting-started-with-r.html#cb51-5"></a><span class="kw">install_github</span>(<span class="st">&quot;zief0002/educate&quot;</span>)</span></code></pre></div>
+<p>The message I get when installing this is</p>
+<pre><code>Installing package into ‘/Users/zief0002/Library/R/4.0/library’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘educate’ ...
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (educate)</code></pre>
+<p>The “DONE” message typically signified successful installation. Note that you may be prompted to update some packages. If you get this message, choose the option to update “ALL” packages. As with packages installed from CRAN, if things worked you should be able to load the package you just installed using the <code>library()</code> function without any errors.</p>
+<p><br /><br /></p>
+</div>
+</div>
+<div id="install-rtoolscommand-line-tools-1" class="section level3">
+<h3>Install Rtools/Command Line Tools</h3>
+<p>You may need to install some additional functionality to your system in order to get certain packages to install or load properly. On a Windows machine, you might need to install <em>Rtools</em>. Mac users might need to add the <em>Command Line Tools</em>. These tools also allow you to write and compile your own R packages. RStudio has well written instructions for adding these tools at: <a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites" class="uri">https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites</a>.</p>
+<p><br /><br /></p>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>The difference between the two classes is technical and related to how R internally stores the information in the vector.<a href="getting-started-with-r.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>If you really wanted to use the <code>filter()</code> function from the <strong>stats</strong> package you could specify this in the syntax using the <code>::</code> operator, <code>stats::filter()</code>. This operator also allows you to use a function without loading the package with the <code>library()</code> function.<a href="getting-started-with-r.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>“CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.”<a href="getting-started-with-r.html#fnref4" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="r-and-rstudio-installation-and-setup.html"><button class="btn btn-default">Previous</button></a>
+<a href="references.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

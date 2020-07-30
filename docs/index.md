@@ -1,7 +1,7 @@
 --- 
 title: "Computational Toolkit for Educational Scientists"
 author: "Andrew Zieffler"
-date: "2020-07-25"
+date: "2020-07-27"
 site: bookdown::bookdown_site
 output: 
   bookdown::html_book:
@@ -56,7 +56,7 @@ The book is typeset using [Crimson Text](https://fonts.google.com/specimen/Crims
 - Laptop icon made by [Tomas Knop](https://www.flaticon.com/authors/tomas-knop) from [www.flaticon.com](https://www.flaticon.com/)
 - Directory icon made by [Darius Dan](https://www.flaticon.com/authors/darius-dan) from [www.flaticon.com](https://www.flaticon.com/)
 
-
+- Internet icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
 
 <!-- <br /><br /> -->
 

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="R and RStudio: Installation and Setup | Computational Toolkit for Educational Scientists" />
+<meta property="og:type" content="book" />
+
+
+<meta property="og:description" content="Computational tools useful for researchers in the education sciences." />
+<meta name="github-repo" content="zief0002/modeling" />
+
+<meta name="author" content="Andrew Zieffler" />
+
+<meta name="date" content="2020-07-27" />
+
+
+<meta name="description" content="Computational tools useful for researchers in the education sciences.">
+
+<title>R and RStudio: Installation and Setup | Computational Toolkit for Educational Scientists</title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style/style.css" type="text/css" />
+<link rel="stylesheet" href="style/table-styles.css" type="text/css" />
+<link rel="stylesheet" href="style/syntax.css" type="text/css" />
+<link rel="stylesheet" href="style/navbar.css" type="text/css" />
+<link rel="stylesheet" href="style/notes.css" type="text/css" />
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-fluid main-container">
+
+
+<div class="row">
+<div class="col-sm-12">
+<div id="TOC">
+<ul>
+<li><a href="index.html#foreword">Foreword</a></li>
+<li><a href="statistical-computation.html#statistical-computation">Statistical Computation</a></li>
+<li><a href="r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup">R and RStudio: Installation and Setup</a></li>
+<li><a href="getting-started-with-r.html#getting-started-with-r">Getting Started with R</a></li>
+<li><a href="references.html#references">References</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+<div id="r-and-rstudio-installation-and-setup" class="section level1">
+<h1>R and RStudio: Installation and Setup</h1>
+<p>In this chapter, we will walk you through the process of installing R and the desktop version of RStudio. Although you will need to install both R and RStudio, once they are installed you will only interact with RStudio when you compute.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/01-rstudio-and-r.png" alt="Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio." width="60%" />
+<p class="caption">
+Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio.
+</p>
+</div>
+<p><br /><br /></p>
+<div id="installing-r" class="section level2">
+<h2>Installing R</h2>
+<p>To install R, navigate your web browser to:</p>
+<p style="margin-left:auto; margin-right:auto;">
+<a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>
+</p>
+<p>Then,</p>
+<ul>
+<li>Click the <code>CRAN</code> link under <code>Download</code> on the left-hand side of the page.</li>
+<li>Select a mirror site. These should all be the same, but I tend to choose the <code>Iowa State University</code> link under <code>USA</code>.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></li>
+<li>In the <code>Download and Install R</code> box, choose the binary that matches the operating system (OS) for your computer.</li>
+</ul>
+<p>This is where the installation directions diverge depending on your OS.</p>
+<p><strong>Mac Instructions</strong></p>
+<p>So long as you are running MacOS 10.13 or higher just click the first link for the PKG, which will download the installer for the most current version of R (4.0.2 as of July 24, 2020). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
+<p>If you are running an older version of MacOS, click the <code>el-capitan/base</code> link (near the bottom of the page) and then select the PKG link for R 3.6.3. Once the download completes, open the installer and follow the directions to install R on your computer.</p>
+<p>If you are unsure which version of the MacOS is running on your computer, select <code>About this Mac</code> from the Apple menu in your toolbar.</p>
+<p><strong>Windows Instructions</strong></p>
+<p>Click the link that says <code>Install R for the first time</code> (or click <code>base</code>; they go to the same place). Then click the <code>Download R 4.0.2 for Windows</code> link, which will download the installer for the most current version of R (4.0.2 as of July 24, 2020). Once the download completes, open the installer and follow the directions to install R on your computer.</p>
+<p><strong>Linux Instructions</strong></p>
+<p>If you are running Linux, you should know how to install things on your computer. 🙋</p>
+<p><br /><br /></p>
+</div>
+<div id="installing-rstudio-desktop" class="section level2">
+<h2>Installing RStudio Desktop</h2>
+<p>After you have installed R, you next need to install RStudio Desktop. To do this, navigate your web browser to:</p>
+<p style="margin-left:auto; margin-right:auto;">
+<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>
+</p>
+<p>Then,</p>
+<ul>
+<li>Select the blue <code>Download</code> button under the free, open-source version of RStudio Desktop.</li>
+<li>Select the installer associated with your computer’s OS.</li>
+<li>Once the download completes, open the installer and follow the directions to install RStudio Desktop on your computer.</li>
+</ul>
+<p><br /><br /></p>
+</div>
+<div id="checking-that-things-worked" class="section level2">
+<h2>Checking that Things Worked</h2>
+<p>From your Applications or Programs folder, open RStudio. If you have successfully downloaded both programs, this should open the application and you should see a message indicating that you are using “R version 4.0.2” in the console pane.</p>
+<div class="figure" style="text-align: center">
+<img src="figs/02-opening-rstudio.png" alt="Once you open RStudio, you should see a message indicating that you are using `R version 4.0.2` in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here." width="100%" />
+<p class="caption">
+Once you open RStudio, you should see a message indicating that you are using <code>R version 4.0.2</code> in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.
+</p>
+</div>
+<p><br /><br /></p>
+</div>
+<div id="customizing-rstudio" class="section level2">
+<h2>Customizing RStudio</h2>
+<p>While the information in this section is not crucial for making things work, it is useful to get RStudio looking good and setting some default settings. Open the <code>Tools &gt; Options</code> menu (Windows) or <code>RStudio &gt; Preferences</code> (Mac).</p>
+<div class="figure" style="text-align: center">
+<img src="figs/06-options.png" alt="The RStudio options/preferences menu has many settings to customize RStudio." width="50%" />
+<p class="caption">
+The RStudio options/preferences menu has many settings to customize RStudio.
+</p>
+</div>
+<ul>
+<li>In the <code>General</code> settings (<code>Basic</code>), change the option on “Save workspace to .Rdata on exit” to be “Never”. Click the “Apply” button.</li>
+<li>In the <code>Appearance</code> settings, customize the look of RStudio to something aesthetically appealing to you. When you are finished, click the “Apply” button.</li>
+<li>There are also options you can set in the <code>Accessibility</code> settings if you use a screen reader. If you change anything, don’t forget to click the “Apply” button.</li>
+</ul>
+<p>When you are finished customizing RStudio, click the “OK” button.</p>
+<p><br /><br /></p>
+</div>
+<div id="install-rtoolscommand-line-tools" class="section level2">
+<h2>Install Rtools/Command Line Tools</h2>
+<p>You may need to install some additional functionality to your system in order to get certain packages to install or load properly. On a Windows machine, you might need to install <em>Rtools</em>. Mac users might need to add the <em>Command Line Tools</em>. These tools also allow you to write and compile your own R packages. RStudio has well written instructions for adding these tools at: <a href="https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites" class="uri">https://support.rstudio.com/hc/en-us/articles/200486498-Package-Development-Prerequisites</a>.</p>
+<p><br /><br /></p>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>When internet used to be dial-up (i.e., super slow, you wanted to choose a mirror site that was closest in proximity to your location as it sped up the download. This is less of a concern now that internet download speeds are much faster.<a href="r-and-rstudio-installation-and-setup.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+<p style="text-align: center;">
+<a href="statistical-computation.html"><button class="btn btn-default">Previous</button></a>
+<a href="getting-started-with-r.html"><button class="btn btn-default">Next</button></a>
+</p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+</body>
+</html>

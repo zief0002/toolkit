@@ -5,6 +5,8 @@ output_dir: docs
 rmd_files: [
     "index.Rmd",
     "01-statistical-computation.Rmd",
+    "02-r-and-rstudio-installation.Rmd",
+    "03-getting-started-with-r.Rmd",
     "99-references.Rmd"
     ]
 clean: [toolkit.bib, bookdown.bbl]
