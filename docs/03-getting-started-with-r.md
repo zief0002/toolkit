@@ -19,7 +19,7 @@ There are a several ways to interact with R within RStudio. One of those methods
 
 <div class="figure" style="text-align: center">
 <img src="figs/08-console.png" alt="The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the &lt;return&gt; or &lt;enter&gt; key." width="60%" />
-<p class="caption">The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the <return> or <enter> key.</p>
+<p class="caption">(\#fig:unnamed-chunk-2)The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the <return> or <enter> key.</p>
 </div>
 
 To get started, we will have R carry out some arithmetic. At the prompt enter each of the following lines of syntax. After each line, hit the <return> or <enter> key.
@@ -73,7 +73,7 @@ Almost all commands in R are built around the use of a function. Functions carry
 
 <div class="figure" style="text-align: center">
 <img src="figs/09-function-machine.png" alt="LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5." width="60%" />
-<p class="caption">LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5.</p>
+<p class="caption">(\#fig:unnamed-chunk-5)LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5.</p>
 </div>
 
 The syntax for using most functions in R follows a simple structure: The name of the function is followed by a pair of parentheses. Argument values (inputs) are specified inside the parentheses. In general,
@@ -304,7 +304,7 @@ In RStudio you can see which objects are in your working environment by examinin
 
 <div class="figure" style="text-align: center">
 <img src="figs/10-environment.png" alt="The enivironment pane shows the objects in the R working environment. It also displays the object's class and gives a preview of the the contents." width="40%" />
-<p class="caption">The enivironment pane shows the objects in the R working environment. It also displays the object's class and gives a preview of the the contents.</p>
+<p class="caption">(\#fig:unnamed-chunk-18)The enivironment pane shows the objects in the R working environment. It also displays the object's class and gives a preview of the the contents.</p>
 </div>
 
 Not only does this pane indicate the name of the objects in the working environment, but is also displays each object's class. In this case we can tell that `chili` is an integer vector and `sadie` is a numeric vector.^[The difference between the two classes is technical and related to how R internally stores the information in the vector.] Moreover, we are told that each vector includes five elements, shown in the environment pane as `[1:5]`. Lastly, we are given a preview of each object's contents. Since these vectors only contain five elements, we see all the values in the preview.
@@ -334,7 +334,7 @@ After assigning new values to `chili`, we can see the information in the environ
 
 <div class="figure" style="text-align: center">
 <img src="figs/11-environment-chili.png" alt="The object `chili` although still an integer vector, now includes 10 elements." width="40%" />
-<p class="caption">The object `chili` although still an integer vector, now includes 10 elements.</p>
+<p class="caption">(\#fig:unnamed-chunk-21)The object `chili` although still an integer vector, now includes 10 elements.</p>
 </div>
 
 Any computations carried out with `chili` will use the new object.
@@ -361,7 +361,7 @@ It is important to be able to record the syntax you use. This acts as a way of "
 
 <div class="figure" style="text-align: center">
 <img src="figs/12-new-script-file.png" alt="LEFT: Create a new script file using RStudio's `File` menu. RIGHT: Create a new script file by clicking on the `New File` icon in the toolbar." width="60%" />
-<p class="caption">LEFT: Create a new script file using RStudio's `File` menu. RIGHT: Create a new script file by clicking on the `New File` icon in the toolbar.</p>
+<p class="caption">(\#fig:unnamed-chunk-23)LEFT: Create a new script file using RStudio's `File` menu. RIGHT: Create a new script file by clicking on the `New File` icon in the toolbar.</p>
 </div>
 
 Script files should only include your R syntax and comments. Script files should NOT include:
@@ -373,7 +373,7 @@ Comments, which are human-readable annotations or explanations of the syntax, ar
 
 <div class="figure" style="text-align: center">
 <img src="figs/13-script-file.png" alt="Example script file with comments." width="60%" />
-<p class="caption">Example script file with comments.</p>
+<p class="caption">(\#fig:unnamed-chunk-24)Example script file with comments.</p>
 </div>
 
 Script files can be saved and opened the same as any other document. So, no more worrying about losing your work or objects that you created when you close your R sesssion. Just open your saved script file, highlight the parts you want to re-run, and click the `Run` button! 
@@ -387,7 +387,7 @@ Not only does the script file record your syntax, but it can also act as the veh
 
 <div class="figure" style="text-align: center">
 <img src="figs/14-run-script.png" alt="To execute syntax from the script file, highlight the syntax you want to run and then click the `Run` button in the toolbar." width="80%" />
-<p class="caption">To execute syntax from the script file, highlight the syntax you want to run and then click the `Run` button in the toolbar.</p>
+<p class="caption">(\#fig:unnamed-chunk-25)To execute syntax from the script file, highlight the syntax you want to run and then click the `Run` button in the toolbar.</p>
 </div>
 
 Writing syntax directly in the script file and running it is a groovy workflow for using R. Writing syntax directly in the script file also saves you from having to copy-and-paste syntax you want to save from the console. In my own work, I use this workflow almost daily.
@@ -401,21 +401,21 @@ Every R function is housed in a package. To use the functions in a particular pa
 
 <div class="figure" style="text-align: center">
 <img src="figs/07-install-vs-load.png" alt="Packages need to be installed and loaded." width="60%" />
-<p class="caption">Packages need to be installed and loaded.</p>
+<p class="caption">(\#fig:unnamed-chunk-26)Packages need to be installed and loaded.</p>
 </div>
 
 You can see the packages  (and which version of each package) are installed by examining the `Packages` tab in RStudio. Every package listed there has been installed. You will also be able to see the version number of the package that is installed. Some of those packages may be checked. These are the packages that are also loaded into memory.
 
 <div class="figure" style="text-align: center">
 <img src="figs/03-package-tab.png" alt="The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory." width="40%" />
-<p class="caption">The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.</p>
+<p class="caption">(\#fig:unnamed-chunk-27)The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.</p>
 </div>
 
 Twenty-nine packages were included when you installed R on your computer. When you start an R session by opening RStudio, some of those packages are also loaded into memory. 
 
 <div class="figure" style="text-align: center">
 <img src="figs/04-default-packages.png" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory." width="70%" />
-<p class="caption">The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.</p>
+<p class="caption">(\#fig:unnamed-chunk-28)The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.</p>
 </div>
 
 <br /><br />
@@ -507,7 +507,7 @@ This will open a pop-up window where you can type the CRAN package you want to i
 
 <div class="figure" style="text-align: center">
 <img src="figs/05-install-package.png" alt="Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked." width="50%" />
-<p class="caption">Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked.</p>
+<p class="caption">(\#fig:unnamed-chunk-33)Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked.</p>
 </div>
 
 You may be prompted to choose a nearest mirror. If so, choose a mirror location. If you are successful in installing the package, you will get a message like the following:

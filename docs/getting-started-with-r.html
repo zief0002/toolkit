@@ -14,7 +14,7 @@
 
 <meta name="author" content="Andrew Zieffler" />
 
-<meta name="date" content="2020-07-27" />
+<meta name="date" content="2020-08-12" />
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
@@ -144,6 +144,7 @@ img {
 <li><a href="statistical-computation.html#statistical-computation">Statistical Computation</a></li>
 <li><a href="r-and-rstudio-installation-and-setup.html#r-and-rstudio-installation-and-setup">R and RStudio: Installation and Setup</a></li>
 <li><a href="getting-started-with-r.html#getting-started-with-r">Getting Started with R</a></li>
+<li><a href="data-structures-in-r.html#data-structures-in-r">Data Structures in R</a></li>
 <li><a href="references.html#references">References</a></li>
 </ul>
 </div>
@@ -162,10 +163,10 @@ img {
 <div id="computing-in-the-console" class="section level2">
 <h2>Computing in the Console</h2>
 <p>There are a several ways to interact with R within RStudio. One of those methods is to issue commands in the RStudio console pane. Computing in the console is similar to working with a calculator: you enter syntax and R runs the syntax. The <code>&gt;</code> symbol in the console pane is called the “R prompt” and is prompting you to enter syntax. After you enter any syntax, you hit the <return> or <enter> key to execute the syntax.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="figs/08-console.png" alt="The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the &lt;return&gt; or &lt;enter&gt; key." width="60%" />
 <p class="caption">
-The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the <return> or <enter> key.
+Figure 1: The console pane in RStudio is one way to compute with R. Syntax is entered at the R prompt and executed by hitting the <return> or <enter> key.
 </p>
 </div>
 <p>To get started, we will have R carry out some arithmetic. At the prompt enter each of the following lines of syntax. After each line, hit the <return> or <enter> key.</p>
@@ -198,10 +199,10 @@ The console pane in RStudio is one way to compute with R. Syntax is entered at t
 <div id="functions-the-workhorse-of-r" class="section level2">
 <h2>Functions: The Workhorse of R</h2>
 <p>Almost all commands in R are built around the use of a function. Functions carry out operations on their inputs (called <em>arguments</em>) and produce an output (called a <em>returned value</em>).</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
 <img src="figs/09-function-machine.png" alt="LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5." width="60%" />
 <p class="caption">
-LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5.
+Figure 4: LEFT: Arguments are inputted into a function which returns an output. RIGHT: The value 25 is inputted into the square root function which returns the value of 5.
 </p>
 </div>
 <p>The syntax for using most functions in R follows a simple structure: The name of the function is followed by a pair of parentheses. Argument values (inputs) are specified inside the parentheses. In general,</p>
@@ -297,13 +298,13 @@ where <span class="math inline">\(f(x)\)</span> is the logarithm function and <s
 <span id="cb34-2"><a href="getting-started-with-r.html#cb34-2"></a><span class="kw">prod</span>(sadie)</span></code></pre></div>
 <pre><code>[1] 243</code></pre>
 <p>In RStudio you can see which objects are in your working environment by examining the <code>Environment</code> pane.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
 <img src="figs/10-environment.png" alt="The enivironment pane shows the objects in the R working environment. It also displays the object's class and gives a preview of the the contents." width="40%" />
 <p class="caption">
-The enivironment pane shows the objects in the R working environment. It also displays the object’s class and gives a preview of the the contents.
+Figure 5: The enivironment pane shows the objects in the R working environment. It also displays the object’s class and gives a preview of the the contents.
 </p>
 </div>
-<p>Not only does this pane indicate the name of the objects in the working environment, but is also displays each object’s class. In this case we can tell that <code>chili</code> is an integer vector and <code>sadie</code> is a numeric vector.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> Moreover, we are told that each vector includes five elements, shown in the environment pane as <code>[1:5]</code>. Lastly, we are given a preview of each object’s contents. Since these vectors only contain five elements, we see all the values in the preview.</p>
+<p>Not only does this pane indicate the name of the objects in the working environment, but is also displays each object’s class. In this case we can tell that <code>chili</code> is an integer vector and <code>sadie</code> is a numeric vector.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> Moreover, we are told that each vector includes five elements, shown in the environment pane as <code>[1:5]</code>. Lastly, we are given a preview of each object’s contents. Since these vectors only contain five elements, we see all the values in the preview.</p>
 <p>You can also use syntax to obtain a list of objects that are in your working environment using the <code>ls()</code> function with no arguments.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="getting-started-with-r.html#cb36-1"></a><span class="co"># List the objects in working environment</span></span>
 <span id="cb36-2"><a href="getting-started-with-r.html#cb36-2"></a><span class="kw">ls</span>()</span></code></pre></div>
@@ -312,10 +313,10 @@ The enivironment pane shows the objects in the R working environment. It also di
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="getting-started-with-r.html#cb38-1"></a><span class="co"># Assign the values 1 to 10 in chili</span></span>
 <span id="cb38-2"><a href="getting-started-with-r.html#cb38-2"></a>chili =<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from =</span> <span class="dv">1</span>, <span class="dt">to =</span> <span class="dv">10</span>)</span></code></pre></div>
 <p>After assigning new values to <code>chili</code>, we can see the information in the environment pane has been updated to reflect the new contents of the object.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-21"></span>
 <img src="figs/11-environment-chili.png" alt="The object `chili` although still an integer vector, now includes 10 elements." width="40%" />
 <p class="caption">
-The object <code>chili</code> although still an integer vector, now includes 10 elements.
+Figure 6: The object <code>chili</code> although still an integer vector, now includes 10 elements.
 </p>
 </div>
 <p>Any computations carried out with <code>chili</code> will use the new object.</p>
@@ -329,10 +330,10 @@ The object <code>chili</code> although still an integer vector, now includes 10 
 <div id="script-files-recording-your-syntax" class="section level2">
 <h2>Script Files: Recording Your Syntax</h2>
 <p>It is important to be able to record the syntax you use. This acts as a way of “saving” your work, and it also acts as a record of the analysis for your collaborators in the spirit of reproducible work. One way to record the R syntax you use is to employ a <em>script file</em>. You can create a new script file by selecting <code>File &gt; New File &gt; R Script</code> from the RStudio menu bar. You can also obtain a new R script by clicking the <code>New File</code> icon (document with the plus-sign) on the tool bar and selecting <code>R Script</code>.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-23"></span>
 <img src="figs/12-new-script-file.png" alt="LEFT: Create a new script file using RStudio's `File` menu. RIGHT: Create a new script file by clicking on the `New File` icon in the toolbar." width="60%" />
 <p class="caption">
-LEFT: Create a new script file using RStudio’s <code>File</code> menu. RIGHT: Create a new script file by clicking on the <code>New File</code> icon in the toolbar.
+Figure 7: LEFT: Create a new script file using RStudio’s <code>File</code> menu. RIGHT: Create a new script file by clicking on the <code>New File</code> icon in the toolbar.
 </p>
 </div>
 <p>Script files should only include your R syntax and comments. Script files should NOT include:</p>
@@ -341,10 +342,10 @@ LEFT: Create a new script file using RStudio’s <code>File</code> menu. RIGHT: 
 <li>output</li>
 </ul>
 <p>Comments, which are human-readable annotations or explanations of the syntax, are written using the hashtag (<code>#</code>). These can be placed on their own line in the script file, or can be placed at the end of a line with syntax. The comment continues until you hit the <enter> key. Comments help other people understand your syntax and also act as a reminder for the future you of what your code actually does. Get is the habit of including comments in your syntax. Not only is it good coding practice, but it also will help you become familiar with and learn the R syntax as you describe the purpose of the syntax you are writing.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-24"></span>
 <img src="figs/13-script-file.png" alt="Example script file with comments." width="60%" />
 <p class="caption">
-Example script file with comments.
+Figure 8: Example script file with comments.
 </p>
 </div>
 <p>Script files can be saved and opened the same as any other document. So, no more worrying about losing your work or objects that you created when you close your R sesssion. Just open your saved script file, highlight the parts you want to re-run, and click the <code>Run</code> button!</p>
@@ -352,10 +353,10 @@ Example script file with comments.
 <div id="executing-syntax-from-a-script-file" class="section level3">
 <h3>Executing Syntax from a Script File</h3>
 <p>Not only does the script file record your syntax, but it can also act as the vehicle from which you run your R syntax. Syntax in the script file can be executed by highlighting it and pressing the <code>Run</code> button in the toolbar. You can run one line at a time, or highlight multiple lines and execute all of them sequentially.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-25"></span>
 <img src="figs/14-run-script.png" alt="To execute syntax from the script file, highlight the syntax you want to run and then click the `Run` button in the toolbar." width="80%" />
 <p class="caption">
-To execute syntax from the script file, highlight the syntax you want to run and then click the <code>Run</code> button in the toolbar.
+Figure 9: To execute syntax from the script file, highlight the syntax you want to run and then click the <code>Run</code> button in the toolbar.
 </p>
 </div>
 <p>Writing syntax directly in the script file and running it is a groovy workflow for using R. Writing syntax directly in the script file also saves you from having to copy-and-paste syntax you want to save from the console. In my own work, I use this workflow almost daily.</p>
@@ -365,24 +366,24 @@ To execute syntax from the script file, highlight the syntax you want to run and
 <div id="installing-and-loading-r-packages" class="section level2">
 <h2>Installing and Loading R Packages</h2>
 <p>Every R function is housed in a package. To use the functions in a particular package, the package needs to be (1) installed, and (2) loaded into memory.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-26"></span>
 <img src="figs/07-install-vs-load.png" alt="Packages need to be installed and loaded." width="60%" />
 <p class="caption">
-Packages need to be installed and loaded.
+Figure 10: Packages need to be installed and loaded.
 </p>
 </div>
 <p>You can see the packages (and which version of each package) are installed by examining the <code>Packages</code> tab in RStudio. Every package listed there has been installed. You will also be able to see the version number of the package that is installed. Some of those packages may be checked. These are the packages that are also loaded into memory.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-27"></span>
 <img src="figs/03-package-tab.png" alt="The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory." width="40%" />
 <p class="caption">
-The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.
+Figure 11: The packages tab shows which packages are installed. The list of packages you have installed will likely be different. Checked packages are loaded into memory. In the packages seen here, only the base package is loaded into memory.
 </p>
 </div>
 <p>Twenty-nine packages were included when you installed R on your computer. When you start an R session by opening RStudio, some of those packages are also loaded into memory.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-28"></span>
 <img src="figs/04-default-packages.png" alt="The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory." width="70%" />
 <p class="caption">
-The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.
+Figure 12: The 29 packages installed as part of R. The base, datasets, graphics, grDevices, methods, stats, and utils packages are loaded into memory when you start an R session. The other 22 packages are installed but not loaded into memory.
 </p>
 </div>
 <p><br /><br /></p>
@@ -409,7 +410,7 @@ The following objects are masked from ‘package:stats’:
 The following objects are masked from ‘package:base’:
 
     intersect, setdiff, setequal, union</code></pre>
-<p>This tells me that the <strong>dplyr</strong> package includes six functions that have the same name as functions included in other packages that have already been loaded into memory (two from the <strong>stats</strong> package and four from the <strong>base</strong> package.) Since <strong>dplyr</strong> was the most recently loaded package, if you were to use the <code>filter()</code> function, R would use <strong>dplyr</strong>’s <code>filter()</code> function rather than that from the <strong>stats</strong> package<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>This tells me that the <strong>dplyr</strong> package includes six functions that have the same name as functions included in other packages that have already been loaded into memory (two from the <strong>stats</strong> package and four from the <strong>base</strong> package.) Since <strong>dplyr</strong> was the most recently loaded package, if you were to use the <code>filter()</code> function, R would use <strong>dplyr</strong>’s <code>filter()</code> function rather than that from the <strong>stats</strong> package<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
 <p><br /><br /></p>
 </div>
 <div id="error-loading-a-package" class="section level4">
@@ -428,12 +429,12 @@ there is no package called ‘Rcpp’</code></pre>
 </div>
 <div id="adding-functionality-installing-packages" class="section level3">
 <h3>Adding Functionality: Installing Packages</h3>
-<p>You can also install other packages onto your R system. R, in fact, has a repository called CRAN<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>, that includes 16,000 different packages (as of July 2020). The easiest way to install a package from CRAN onto your computer is to use the <code>Install</code> button in the `Packages tab of RStudio.</p>
+<p>You can also install other packages onto your R system. R, in fact, has a repository called CRAN<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>, that includes 16,000 different packages (as of July 2020). The easiest way to install a package from CRAN onto your computer is to use the <code>Install</code> button in the `Packages tab of RStudio.</p>
 <p>This will open a pop-up window where you can type the CRAN package you want to install in a text box. Ensure that the “Install dependencies” box is checked (this will also install any package dependencies), and then click “Install”.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-33"></span>
 <img src="figs/05-install-package.png" alt="Pop-up window to install packages. Here we are installing the dplyr package. Note that the 'Install dependencies' box is checked." width="50%" />
 <p class="caption">
-Pop-up window to install packages. Here we are installing the dplyr package. Note that the ‘Install dependencies’ box is checked.
+Figure 13: Pop-up window to install packages. Here we are installing the dplyr package. Note that the ‘Install dependencies’ box is checked.
 </p>
 </div>
 <p>You may be prompted to choose a nearest mirror. If so, choose a mirror location. If you are successful in installing the package, you will get a message like the following:</p>
@@ -492,15 +493,15 @@ The downloaded binary packages are in
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>The difference between the two classes is technical and related to how R internally stores the information in the vector.<a href="getting-started-with-r.html#fnref2" class="footnote-back">↩︎</a></p></li>
-<li id="fn3"><p>If you really wanted to use the <code>filter()</code> function from the <strong>stats</strong> package you could specify this in the syntax using the <code>::</code> operator, <code>stats::filter()</code>. This operator also allows you to use a function without loading the package with the <code>library()</code> function.<a href="getting-started-with-r.html#fnref3" class="footnote-back">↩︎</a></p></li>
-<li id="fn4"><p>“CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.”<a href="getting-started-with-r.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<ol start="3">
+<li id="fn3"><p>The difference between the two classes is technical and related to how R internally stores the information in the vector.<a href="getting-started-with-r.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<li id="fn4"><p>If you really wanted to use the <code>filter()</code> function from the <strong>stats</strong> package you could specify this in the syntax using the <code>::</code> operator, <code>stats::filter()</code>. This operator also allows you to use a function without loading the package with the <code>library()</code> function.<a href="getting-started-with-r.html#fnref4" class="footnote-back">↩︎</a></p></li>
+<li id="fn5"><p>“CRAN is a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.”<a href="getting-started-with-r.html#fnref5" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
 <p style="text-align: center;">
 <a href="r-and-rstudio-installation-and-setup.html"><button class="btn btn-default">Previous</button></a>
-<a href="references.html"><button class="btn btn-default">Next</button></a>
+<a href="data-structures-in-r.html"><button class="btn btn-default">Next</button></a>
 </p>
 </div>
 </div>

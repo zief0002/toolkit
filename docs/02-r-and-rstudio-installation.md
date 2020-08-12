@@ -7,7 +7,7 @@ In this chapter, we will walk you through the process of installing R and the de
 
 <div class="figure" style="text-align: center">
 <img src="figs/01-rstudio-and-r.png" alt="Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio." width="60%" />
-<p class="caption">Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio.</p>
+<p class="caption">(\#fig:unnamed-chunk-2)Workflow for using R: Once both appplications are installed on you computer, you will only interact with R through RStudio.</p>
 </div>
 
 <br /><br />
@@ -42,7 +42,7 @@ Click the link that says `Install R for the first time` (or click `base`; they g
 
 **Linux Instructions**
 
-If you are running Linux, you should know how to install things on your computer. 🙋
+If you are running Linux, you should know how to install things on your computer. 😆
 
 
 <br /><br />
@@ -70,7 +70,7 @@ From your Applications or Programs folder, open RStudio. If you have successfull
 
 <div class="figure" style="text-align: center">
 <img src="figs/02-opening-rstudio.png" alt="Once you open RStudio, you should see a message indicating that you are using `R version 4.0.2` in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here." width="100%" />
-<p class="caption">Once you open RStudio, you should see a message indicating that you are using `R version 4.0.2` in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.</p>
+<p class="caption">(\#fig:unnamed-chunk-3)Once you open RStudio, you should see a message indicating that you are using `R version 4.0.2` in the console pane. Here the console pane is on the left-side, but it may be in a different location for you. Your RStudio may also have a white background rather than the black background seen here.</p>
 </div>
 
 <br /><br />
@@ -82,7 +82,7 @@ While the information in this section is not crucial for making things work, it 
 
 <div class="figure" style="text-align: center">
 <img src="figs/06-options.png" alt="The RStudio options/preferences menu has many settings to customize RStudio." width="50%" />
-<p class="caption">The RStudio options/preferences menu has many settings to customize RStudio.</p>
+<p class="caption">(\#fig:unnamed-chunk-4)The RStudio options/preferences menu has many settings to customize RStudio.</p>
 </div>
 
 

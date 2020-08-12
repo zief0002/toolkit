@@ -1,7 +1,7 @@
 --- 
 title: "Computational Toolkit for Educational Scientists"
 author: "Andrew Zieffler"
-date: "2020-07-27"
+date: "2020-08-12"
 site: bookdown::bookdown_site
 output: 
   bookdown::html_book:
@@ -30,7 +30,7 @@ description: "Computational tools useful for researchers in the education scienc
 
 # Foreword
 
-I am putting this out there primarily as a resource for my own students to help them through the installation of the tools we use in the courses I teach. As such, I will initially focus on R and RStudio, but I will probably add tools (e.g., reference managers, github, make) over time as I have time. (Note: If you want to contribute to this, create a Pull Request or [send me an email](mailto: zief0002@umn.edu).) Also, feel free to offer criticism, suggestion, and feedback. You can either [open an issue](https://github.com/zief0002/modeling/issues) on the book's github page or [send me an email](mailto: zief0002@umn.edu) directly.
+I am putting this out there primarily as a resource for my own students to help them through the installation and provide written instruction for the computational tools we use in the courses I teach. As such, I will initially focus on R and RStudio, but I will probably add tools (e.g., reference managers, github, make) over time as I have time. (Note: If you want to contribute to this, create a Pull Request or [send me an email](mailto: zief0002@umn.edu).) Also, feel free to offer criticism, suggestion, and feedback. You can either [open an issue](https://github.com/zief0002/modeling/issues) on the book's github page or [send me an email](mailto: zief0002@umn.edu) directly.
 
 <br />
 
