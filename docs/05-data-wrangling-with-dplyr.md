@@ -19,15 +19,15 @@ head(city)
 ```
 
 ```
-# A tibble: 6 x 6
-  education income seniority gender  male party      
-      <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
-1         8   37.4         7 male       1 Democrat   
-2         8   26.4         9 female     0 Independent
-3        10   47.0        14 male       1 Democrat   
-4        10   34.2        16 female     0 Independent
-5        10   25.5         1 female     0 Republican 
-6        12   46.5        11 female     0 Democrat   
+# A tibble: 6 x 5
+  education income seniority gender     party      
+      <dbl>  <dbl>     <dbl> <chr>      <chr>      
+1         8   26.4         9 female     Independent
+2         8   37.4         7 Not female Democrat   
+3        10   34.2        16 female     Independent
+4        10   25.5         1 female     Republican 
+5        10   47.0        14 Not female Democrat   
+6        12   46.5        11 female     Democrat   
 ```
 
 <br /><br />
@@ -50,13 +50,13 @@ summary(city)
  Mean   :16   Mean   :53.74   Mean   :14.81                     
  3rd Qu.:20   3rd Qu.:62.72   3rd Qu.:20.25                     
  Max.   :24   Max.   :82.73   Max.   :27.00                     
-      male           party          
- Min.   :0.0000   Length:32         
- 1st Qu.:0.0000   Class :character  
- Median :0.0000   Mode  :character  
- Mean   :0.4375                     
- 3rd Qu.:1.0000                     
- Max.   :1.0000                     
+    party          
+ Length:32         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
 ```
 
 We could get the same result by using the piping operator (`%>%`). This operator takes a DATA FRAME (given immediately before the operator) and uses it as the FIRST argument in the function that comes immediately after the operator.
@@ -76,13 +76,13 @@ city %>% summary()
  Mean   :16   Mean   :53.74   Mean   :14.81                     
  3rd Qu.:20   3rd Qu.:62.72   3rd Qu.:20.25                     
  Max.   :24   Max.   :82.73   Max.   :27.00                     
-      male           party          
- Min.   :0.0000   Length:32         
- 1st Qu.:0.0000   Class :character  
- Median :0.0000   Mode  :character  
- Mean   :0.4375                     
- 3rd Qu.:1.0000                     
- Max.   :1.0000                     
+    party          
+ Length:32         
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
 ```
 
 Note since the `summary()` function did NOT include any additional arguments, we do not include anything between the parentheses after we pipe. Here is another example that illustrate the use of the pipe operator.
@@ -115,27 +115,27 @@ filter(city, gender == "female")
 ```
 
 ```
-# A tibble: 18 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1         8   26.4         9 female     0 Independent
- 2        10   34.2        16 female     0 Independent
- 3        10   25.5         1 female     0 Republican 
- 4        12   46.5        11 female     0 Democrat   
- 5        12   52.5        16 female     0 Independent
- 6        14   32.6         5 female     0 Independent
- 7        15   37.3         8 female     0 Democrat   
- 8        16   38.6        11 female     0 Independent
- 9        16   55.9        22 female     0 Independent
-10        16   59.5        20 female     0 Independent
-11        17   60.1        10 female     0 Independent
-12        18   54.8        20 female     0 Republican 
-13        18   62.5        16 female     0 Republican 
-14        19   56.0        21 female     0 Independent
-15        20   56.3        22 female     0 Independent
-16        20   54.7        12 female     0 Independent
-17        21   71.2        26 female     0 Democrat   
-18        22   56.3         8 female     0 Independent
+# A tibble: 18 x 5
+   education income seniority gender party      
+       <dbl>  <dbl>     <dbl> <chr>  <chr>      
+ 1         8   26.4         9 female Independent
+ 2        10   34.2        16 female Independent
+ 3        10   25.5         1 female Republican 
+ 4        12   46.5        11 female Democrat   
+ 5        12   52.5        16 female Independent
+ 6        14   32.6         5 female Independent
+ 7        15   37.3         8 female Democrat   
+ 8        16   38.6        11 female Independent
+ 9        16   55.9        22 female Independent
+10        16   59.5        20 female Independent
+11        17   60.1        10 female Independent
+12        18   54.8        20 female Republican 
+13        18   62.5        16 female Republican 
+14        19   56.0        21 female Independent
+15        20   56.3        22 female Independent
+16        20   54.7        12 female Independent
+17        21   71.2        26 female Democrat   
+18        22   56.3         8 female Independent
 ```
 
 ```r
@@ -144,27 +144,27 @@ city %>% filter(gender == "female")
 ```
 
 ```
-# A tibble: 18 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1         8   26.4         9 female     0 Independent
- 2        10   34.2        16 female     0 Independent
- 3        10   25.5         1 female     0 Republican 
- 4        12   46.5        11 female     0 Democrat   
- 5        12   52.5        16 female     0 Independent
- 6        14   32.6         5 female     0 Independent
- 7        15   37.3         8 female     0 Democrat   
- 8        16   38.6        11 female     0 Independent
- 9        16   55.9        22 female     0 Independent
-10        16   59.5        20 female     0 Independent
-11        17   60.1        10 female     0 Independent
-12        18   54.8        20 female     0 Republican 
-13        18   62.5        16 female     0 Republican 
-14        19   56.0        21 female     0 Independent
-15        20   56.3        22 female     0 Independent
-16        20   54.7        12 female     0 Independent
-17        21   71.2        26 female     0 Democrat   
-18        22   56.3         8 female     0 Independent
+# A tibble: 18 x 5
+   education income seniority gender party      
+       <dbl>  <dbl>     <dbl> <chr>  <chr>      
+ 1         8   26.4         9 female Independent
+ 2        10   34.2        16 female Independent
+ 3        10   25.5         1 female Republican 
+ 4        12   46.5        11 female Democrat   
+ 5        12   52.5        16 female Independent
+ 6        14   32.6         5 female Independent
+ 7        15   37.3         8 female Democrat   
+ 8        16   38.6        11 female Independent
+ 9        16   55.9        22 female Independent
+10        16   59.5        20 female Independent
+11        17   60.1        10 female Independent
+12        18   54.8        20 female Republican 
+13        18   62.5        16 female Republican 
+14        19   56.0        21 female Independent
+15        20   56.3        22 female Independent
+16        20   54.7        12 female Independent
+17        21   71.2        26 female Democrat   
+18        22   56.3         8 female Independent
 ```
 
 Here, since the `filter()` function included a second argument, we include that argument in the function that the data frame is piped into. What is piped into the function, in this case `city`, will be automatically inputted into the FIRST argument.
@@ -228,27 +228,27 @@ city %>%
 ```
 
 ```
-# A tibble: 18 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1         8   26.4         9 female     0 Independent
- 2        10   34.2        16 female     0 Independent
- 3        10   25.5         1 female     0 Republican 
- 4        12   46.5        11 female     0 Democrat   
- 5        12   52.5        16 female     0 Independent
- 6        14   32.6         5 female     0 Independent
- 7        15   37.3         8 female     0 Democrat   
- 8        16   38.6        11 female     0 Independent
- 9        16   55.9        22 female     0 Independent
-10        16   59.5        20 female     0 Independent
-11        17   60.1        10 female     0 Independent
-12        18   54.8        20 female     0 Republican 
-13        18   62.5        16 female     0 Republican 
-14        19   56.0        21 female     0 Independent
-15        20   56.3        22 female     0 Independent
-16        20   54.7        12 female     0 Independent
-17        21   71.2        26 female     0 Democrat   
-18        22   56.3         8 female     0 Independent
+# A tibble: 18 x 5
+   education income seniority gender party      
+       <dbl>  <dbl>     <dbl> <chr>  <chr>      
+ 1         8   26.4         9 female Independent
+ 2        10   34.2        16 female Independent
+ 3        10   25.5         1 female Republican 
+ 4        12   46.5        11 female Democrat   
+ 5        12   52.5        16 female Independent
+ 6        14   32.6         5 female Independent
+ 7        15   37.3         8 female Democrat   
+ 8        16   38.6        11 female Independent
+ 9        16   55.9        22 female Independent
+10        16   59.5        20 female Independent
+11        17   60.1        10 female Independent
+12        18   54.8        20 female Republican 
+13        18   62.5        16 female Republican 
+14        19   56.0        21 female Independent
+15        20   56.3        22 female Independent
+16        20   54.7        12 female Independent
+17        21   71.2        26 female Democrat   
+18        22   56.3         8 female Independent
 ```
 
 Here we are selecting only the rows where the gender variable is equal to (`==`) the character string "female". Recall that a single equals sign (`=`) is the assignment operator and that to say "is equal to", we need to use two equals signs (`==`).
@@ -298,13 +298,13 @@ city %>%
 ```
 
 ```
-   education        income        seniority       gender               male    
- Min.   : 8.0   Min.   :25.48   Min.   : 1.0   Length:5           Min.   :0.0  
- 1st Qu.: 8.0   1st Qu.:26.43   1st Qu.: 7.0   Class :character   1st Qu.:0.0  
- Median :10.0   Median :34.18   Median : 9.0   Mode  :character   Median :0.0  
- Mean   : 9.2   Mean   :34.11   Mean   : 9.4                      Mean   :0.4  
- 3rd Qu.:10.0   3rd Qu.:37.45   3rd Qu.:14.0                      3rd Qu.:1.0  
- Max.   :10.0   Max.   :47.03   Max.   :16.0                      Max.   :1.0  
+   education        income        seniority       gender         
+ Min.   : 8.0   Min.   :25.48   Min.   : 1.0   Length:5          
+ 1st Qu.: 8.0   1st Qu.:26.43   1st Qu.: 7.0   Class :character  
+ Median :10.0   Median :34.18   Median : 9.0   Mode  :character  
+ Mean   : 9.2   Mean   :34.11   Mean   : 9.4                     
+ 3rd Qu.:10.0   3rd Qu.:37.45   3rd Qu.:14.0                     
+ Max.   :10.0   Max.   :47.03   Max.   :16.0                     
     party          
  Length:5          
  Class :character  
@@ -353,29 +353,29 @@ city %>%
 ```
 
 ```
-# A tibble: 20 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1         8   37.4         7 male       1 Democrat   
- 2         8   26.4         9 female     0 Independent
- 3        10   47.0        14 male       1 Democrat   
- 4        10   34.2        16 female     0 Independent
- 5        10   25.5         1 female     0 Republican 
- 6        12   46.5        11 female     0 Democrat   
- 7        12   52.5        16 female     0 Independent
- 8        14   32.6         5 female     0 Independent
- 9        15   37.3         8 female     0 Democrat   
-10        16   38.6        11 female     0 Independent
-11        16   55.9        22 female     0 Independent
-12        16   59.5        20 female     0 Independent
-13        17   60.1        10 female     0 Independent
-14        18   54.8        20 female     0 Republican 
-15        18   62.5        16 female     0 Republican 
-16        19   56.0        21 female     0 Independent
-17        20   56.3        22 female     0 Independent
-18        20   54.7        12 female     0 Independent
-19        21   71.2        26 female     0 Democrat   
-20        22   56.3         8 female     0 Independent
+# A tibble: 20 x 5
+   education income seniority gender     party      
+       <dbl>  <dbl>     <dbl> <chr>      <chr>      
+ 1         8   26.4         9 female     Independent
+ 2         8   37.4         7 Not female Democrat   
+ 3        10   34.2        16 female     Independent
+ 4        10   25.5         1 female     Republican 
+ 5        10   47.0        14 Not female Democrat   
+ 6        12   46.5        11 female     Democrat   
+ 7        12   52.5        16 female     Independent
+ 8        14   32.6         5 female     Independent
+ 9        15   37.3         8 female     Democrat   
+10        16   38.6        11 female     Independent
+11        16   55.9        22 female     Independent
+12        16   59.5        20 female     Independent
+13        17   60.1        10 female     Independent
+14        18   54.8        20 female     Republican 
+15        18   62.5        16 female     Republican 
+16        19   56.0        21 female     Independent
+17        20   56.3        22 female     Independent
+18        20   54.7        12 female     Independent
+19        21   71.2        26 female     Democrat   
+20        22   56.3         8 female     Independent
 ```
 
 This syntax would select any employee that is either female OR has an education less than 12 years.
@@ -395,18 +395,18 @@ city %>%
 
 ```
 # A tibble: 32 x 3
-   education income gender
-       <dbl>  <dbl> <chr> 
- 1         8   37.4 male  
- 2         8   26.4 female
- 3        10   47.0 male  
- 4        10   34.2 female
- 5        10   25.5 female
- 6        12   46.5 female
- 7        12   37.7 male  
- 8        12   50.3 male  
- 9        12   52.5 female
-10        14   32.6 female
+   education income gender    
+       <dbl>  <dbl> <chr>     
+ 1         8   26.4 female    
+ 2         8   37.4 Not female
+ 3        10   34.2 female    
+ 4        10   25.5 female    
+ 5        10   47.0 Not female
+ 6        12   46.5 female    
+ 7        12   52.5 female    
+ 8        12   37.7 Not female
+ 9        12   50.3 Not female
+10        14   32.6 female    
 # … with 22 more rows
 ```
 
@@ -420,19 +420,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 2
-   income  male
-    <dbl> <dbl>
- 1   37.4     1
- 2   26.4     0
- 3   47.0     1
- 4   34.2     0
- 5   25.5     0
- 6   46.5     0
- 7   37.7     1
- 8   50.3     1
- 9   52.5     0
-10   32.6     0
+# A tibble: 32 x 1
+   income
+    <dbl>
+ 1   26.4
+ 2   37.4
+ 3   34.2
+ 4   25.5
+ 5   47.0
+ 6   46.5
+ 7   52.5
+ 8   37.7
+ 9   50.3
+10   32.6
 # … with 22 more rows
 ```
 
@@ -453,18 +453,18 @@ city %>%
 
 ```
 # A tibble: 32 x 3
-    educ income gender
-   <dbl>  <dbl> <chr> 
- 1     8   37.4 male  
- 2     8   26.4 female
- 3    10   47.0 male  
- 4    10   34.2 female
- 5    10   25.5 female
- 6    12   46.5 female
- 7    12   37.7 male  
- 8    12   50.3 male  
- 9    12   52.5 female
-10    14   32.6 female
+    educ income gender    
+   <dbl>  <dbl> <chr>     
+ 1     8   26.4 female    
+ 2     8   37.4 Not female
+ 3    10   34.2 female    
+ 4    10   25.5 female    
+ 5    10   47.0 Not female
+ 6    12   46.5 female    
+ 7    12   52.5 female    
+ 8    12   37.7 Not female
+ 9    12   50.3 Not female
+10    14   32.6 female    
 # … with 22 more rows
 ```
 
@@ -484,19 +484,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 7
-   education income seniority gender  male party       income2
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>         <dbl>
- 1         8   37.4         7 male       1 Democrat      37449
- 2         8   26.4         9 female     0 Independent   26430
- 3        10   47.0        14 male       1 Democrat      47034
- 4        10   34.2        16 female     0 Independent   34182
- 5        10   25.5         1 female     0 Republican    25479
- 6        12   46.5        11 female     0 Democrat      46488
- 7        12   37.7        14 male       1 Democrat      37656
- 8        12   50.3        24 male       1 Democrat      50265
- 9        12   52.5        16 female     0 Independent   52480
-10        14   32.6         5 female     0 Independent   32631
+# A tibble: 32 x 6
+   education income seniority gender     party       income2
+       <dbl>  <dbl>     <dbl> <chr>      <chr>         <dbl>
+ 1         8   26.4         9 female     Independent   26430
+ 2         8   37.4         7 Not female Democrat      37449
+ 3        10   34.2        16 female     Independent   34182
+ 4        10   25.5         1 female     Republican    25479
+ 5        10   47.0        14 Not female Democrat      47034
+ 6        12   46.5        11 female     Democrat      46488
+ 7        12   52.5        16 female     Independent   52480
+ 8        12   37.7        14 Not female Democrat      37656
+ 9        12   50.3        24 Not female Democrat      50265
+10        14   32.6         5 female     Independent   32631
 # … with 22 more rows
 ```
 
@@ -526,19 +526,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 8
-   education income seniority gender  male party       income2 cent_educ
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>         <dbl>     <dbl>
- 1         8   37.4         7 male       1 Democrat      37449        -8
- 2         8   26.4         9 female     0 Independent   26430        -8
- 3        10   47.0        14 male       1 Democrat      47034        -6
- 4        10   34.2        16 female     0 Independent   34182        -6
- 5        10   25.5         1 female     0 Republican    25479        -6
- 6        12   46.5        11 female     0 Democrat      46488        -4
- 7        12   37.7        14 male       1 Democrat      37656        -4
- 8        12   50.3        24 male       1 Democrat      50265        -4
- 9        12   52.5        16 female     0 Independent   52480        -4
-10        14   32.6         5 female     0 Independent   32631        -2
+# A tibble: 32 x 7
+   education income seniority gender     party       income2 cent_educ
+       <dbl>  <dbl>     <dbl> <chr>      <chr>         <dbl>     <dbl>
+ 1         8   26.4         9 female     Independent   26430        -8
+ 2         8   37.4         7 Not female Democrat      37449        -8
+ 3        10   34.2        16 female     Independent   34182        -6
+ 4        10   25.5         1 female     Republican    25479        -6
+ 5        10   47.0        14 Not female Democrat      47034        -6
+ 6        12   46.5        11 female     Democrat      46488        -4
+ 7        12   52.5        16 female     Independent   52480        -4
+ 8        12   37.7        14 Not female Democrat      37656        -4
+ 9        12   50.3        24 Not female Democrat      50265        -4
+10        14   32.6         5 female     Independent   32631        -2
 # … with 22 more rows
 ```
 
@@ -556,19 +556,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1        10   25.5         1 female     0 Republican 
- 2         8   26.4         9 female     0 Independent
- 3        14   32.6         5 female     0 Independent
- 4        10   34.2        16 female     0 Independent
- 5        15   37.3         8 female     0 Democrat   
- 6         8   37.4         7 male       1 Democrat   
- 7        12   37.7        14 male       1 Democrat   
- 8        16   38.6        11 female     0 Independent
- 9        12   46.5        11 female     0 Democrat   
-10        10   47.0        14 male       1 Democrat   
+# A tibble: 32 x 5
+   education income seniority gender     party      
+       <dbl>  <dbl>     <dbl> <chr>      <chr>      
+ 1        10   25.5         1 female     Republican 
+ 2         8   26.4         9 female     Independent
+ 3        14   32.6         5 female     Independent
+ 4        10   34.2        16 female     Independent
+ 5        15   37.3         8 female     Democrat   
+ 6         8   37.4         7 Not female Democrat   
+ 7        12   37.7        14 Not female Democrat   
+ 8        16   38.6        11 female     Independent
+ 9        12   46.5        11 female     Democrat   
+10        10   47.0        14 Not female Democrat   
 # … with 22 more rows
 ```
 
@@ -581,19 +581,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1        10   25.5         1 female     0 Republican 
- 2         8   26.4         9 female     0 Independent
- 3        14   32.6         5 female     0 Independent
- 4        10   34.2        16 female     0 Independent
- 5        15   37.3         8 female     0 Democrat   
- 6        16   38.6        11 female     0 Independent
- 7        12   46.5        11 female     0 Democrat   
- 8        12   52.5        16 female     0 Independent
- 9        20   54.7        12 female     0 Independent
-10        18   54.8        20 female     0 Republican 
+# A tibble: 32 x 5
+   education income seniority gender party      
+       <dbl>  <dbl>     <dbl> <chr>  <chr>      
+ 1        10   25.5         1 female Republican 
+ 2         8   26.4         9 female Independent
+ 3        14   32.6         5 female Independent
+ 4        10   34.2        16 female Independent
+ 5        15   37.3         8 female Democrat   
+ 6        16   38.6        11 female Independent
+ 7        12   46.5        11 female Democrat   
+ 8        12   52.5        16 female Independent
+ 9        20   54.7        12 female Independent
+10        18   54.8        20 female Republican 
 # … with 22 more rows
 ```
 
@@ -606,19 +606,19 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 6
-   education income seniority gender  male party      
-       <dbl>  <dbl>     <dbl> <chr>  <dbl> <chr>      
- 1        21   71.2        26 female     0 Democrat   
- 2        18   62.5        16 female     0 Republican 
- 3        17   60.1        10 female     0 Independent
- 4        16   59.5        20 female     0 Independent
- 5        20   56.3        22 female     0 Independent
- 6        22   56.3         8 female     0 Independent
- 7        19   56.0        21 female     0 Independent
- 8        16   55.9        22 female     0 Independent
- 9        18   54.8        20 female     0 Republican 
-10        20   54.7        12 female     0 Independent
+# A tibble: 32 x 5
+   education income seniority gender party      
+       <dbl>  <dbl>     <dbl> <chr>  <chr>      
+ 1        21   71.2        26 female Democrat   
+ 2        18   62.5        16 female Republican 
+ 3        17   60.1        10 female Independent
+ 4        16   59.5        20 female Independent
+ 5        20   56.3        22 female Independent
+ 6        22   56.3         8 female Independent
+ 7        19   56.0        21 female Independent
+ 8        16   55.9        22 female Independent
+ 9        18   54.8        20 female Republican 
+10        20   54.7        12 female Independent
 # … with 22 more rows
 ```
 
@@ -683,10 +683,10 @@ city %>%
 
 ```
 # A tibble: 2 x 3
-  gender     M    SD
-  <chr>  <dbl> <dbl>
-1 female  48.9  13.3
-2 male    59.9  14.2
+  gender         M    SD
+  <chr>      <dbl> <dbl>
+1 female      48.9  13.3
+2 Not female  59.9  14.2
 ```
 
 You can also use `group_by()` with multiple attributes. Simply add additional column names in the `group_by()` function to create more conditional groups. For example to compute the mean income and standard deviation for males and females conditioned on political party, we can use the following syntax.
@@ -704,14 +704,14 @@ city %>%
 ```
 # A tibble: 6 x 4
 # Groups:   gender [2]
-  gender party           M    SD
-  <chr>  <chr>       <dbl> <dbl>
-1 female Democrat     51.7 17.5 
-2 female Independent  48.6 12.0 
-3 female Republican   47.6 19.5 
-4 male   Democrat     53.0 14.9 
-5 male   Independent  61.6 10.4 
-6 male   Republican   70.8  9.41
+  gender     party           M    SD
+  <chr>      <chr>       <dbl> <dbl>
+1 female     Democrat     51.7 17.5 
+2 female     Independent  48.6 12.0 
+3 female     Republican   47.6 19.5 
+4 Not female Democrat     53.0 14.9 
+5 Not female Independent  61.6 10.4 
+6 Not female Republican   70.8  9.41
 ```
 
 This produces the summary measures for each of the combinations of the levels of gender and political affiliation in the data.
