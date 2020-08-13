@@ -42,7 +42,7 @@ Click the link that says `Install R for the first time` (or click `base`; they g
 
 **Linux Instructions**
 
-If you are running Linux, you should know how to install things on your computer. 😆
+If you are running Linux, you should know how to install things on your computer. 😄
 
 
 <br /><br />

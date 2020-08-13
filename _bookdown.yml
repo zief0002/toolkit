@@ -8,6 +8,7 @@ rmd_files: [
     "02-r-and-rstudio-installation.Rmd",
     "03-getting-started-with-r.Rmd",
     "04-data-structures-in-r.Rmd",
+    "05-data-wrangling-with-dplyr.Rmd",
     "99-references.Rmd"
     ]
 clean: [toolkit.bib, bookdown.bbl]

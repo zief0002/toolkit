@@ -1,7 +1,7 @@
 --- 
 title: "Computational Toolkit for Educational Scientists"
 author: "Andrew Zieffler"
-date: "2020-08-12"
+date: "2020-08-13"
 site: bookdown::bookdown_site
 output: 
   bookdown::html_book:
