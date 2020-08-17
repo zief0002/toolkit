@@ -185,7 +185,7 @@ spice_girls = data.frame(
 spice_girls
 ```
 
-Note that we also assigned the data frame to an object called `spice_girls` so we can compute on it. You will learn how to compute on data frames in the chapters [Data Wrangling with dplyr]() and [Plotting with ggplot2]().
+Note that we also assigned the data frame to an object called `spice_girls` so we can compute on it. You will learn how to compute on data frames in the chapters [Data Wrangling with dplyr](#dplyr) and [Plotting with ggplot2](http://zief0002.github.io/epsy-8251/misc/03-plotting-with-ggplot2.html).
 
 <br /><br />
 
