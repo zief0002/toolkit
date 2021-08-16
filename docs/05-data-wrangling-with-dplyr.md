@@ -19,7 +19,7 @@ head(city)
 ```
 
 ```
-# A tibble: 6 x 5
+# A tibble: 6 × 5
   education income seniority gender     party      
       <dbl>  <dbl>     <dbl> <chr>      <chr>      
 1         8   26.4         9 female     Independent
@@ -115,7 +115,7 @@ filter(city, gender == "female")
 ```
 
 ```
-# A tibble: 18 x 5
+# A tibble: 18 × 5
    education income seniority gender party      
        <dbl>  <dbl>     <dbl> <chr>  <chr>      
  1         8   26.4         9 female Independent
@@ -144,7 +144,7 @@ city %>% filter(gender == "female")
 ```
 
 ```
-# A tibble: 18 x 5
+# A tibble: 18 × 5
    education income seniority gender party      
        <dbl>  <dbl>     <dbl> <chr>  <chr>      
  1         8   26.4         9 female Independent
@@ -228,7 +228,7 @@ city %>%
 ```
 
 ```
-# A tibble: 18 x 5
+# A tibble: 18 × 5
    education income seniority gender party      
        <dbl>  <dbl>     <dbl> <chr>  <chr>      
  1         8   26.4         9 female Independent
@@ -353,7 +353,7 @@ city %>%
 ```
 
 ```
-# A tibble: 20 x 5
+# A tibble: 20 × 5
    education income seniority gender     party      
        <dbl>  <dbl>     <dbl> <chr>      <chr>      
  1         8   26.4         9 female     Independent
@@ -394,7 +394,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 3
+# A tibble: 32 × 3
    education income gender    
        <dbl>  <dbl> <chr>     
  1         8   26.4 female    
@@ -420,7 +420,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 1
+# A tibble: 32 × 1
    income
     <dbl>
  1   26.4
@@ -452,7 +452,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 3
+# A tibble: 32 × 3
     educ income gender    
    <dbl>  <dbl> <chr>     
  1     8   26.4 female    
@@ -484,7 +484,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 6
+# A tibble: 32 × 6
    education income seniority gender     party       income2
        <dbl>  <dbl>     <dbl> <chr>      <chr>         <dbl>
  1         8   26.4         9 female     Independent   26430
@@ -526,7 +526,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 7
+# A tibble: 32 × 7
    education income seniority gender     party       income2 cent_educ
        <dbl>  <dbl>     <dbl> <chr>      <chr>         <dbl>     <dbl>
  1         8   26.4         9 female     Independent   26430        -8
@@ -556,7 +556,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 5
+# A tibble: 32 × 5
    education income seniority gender     party      
        <dbl>  <dbl>     <dbl> <chr>      <chr>      
  1        10   25.5         1 female     Republican 
@@ -581,7 +581,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 5
+# A tibble: 32 × 5
    education income seniority gender party      
        <dbl>  <dbl>     <dbl> <chr>  <chr>      
  1        10   25.5         1 female Republican 
@@ -606,7 +606,7 @@ city %>%
 ```
 
 ```
-# A tibble: 32 x 5
+# A tibble: 32 × 5
    education income seniority gender party      
        <dbl>  <dbl>     <dbl> <chr>  <chr>      
  1        21   71.2        26 female Democrat   
@@ -638,7 +638,7 @@ city %>%
 ```
 
 ```
-# A tibble: 1 x 1
+# A tibble: 1 × 1
       M
   <dbl>
 1  53.7
@@ -658,7 +658,7 @@ city %>%
 ```
 
 ```
-# A tibble: 1 x 2
+# A tibble: 1 × 2
       M    SD
   <dbl> <dbl>
 1  53.7  14.6
@@ -682,7 +682,7 @@ city %>%
 ```
 
 ```
-# A tibble: 2 x 3
+# A tibble: 2 × 3
   gender         M    SD
   <chr>      <dbl> <dbl>
 1 female      48.9  13.3
@@ -702,7 +702,7 @@ city %>%
 ```
 
 ```
-# A tibble: 6 x 4
+# A tibble: 6 × 4
 # Groups:   gender [2]
   gender     party           M    SD
   <chr>      <chr>       <dbl> <dbl>

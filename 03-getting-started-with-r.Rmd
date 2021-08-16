@@ -48,7 +48,7 @@ There are a several ways to interact with R within RStudio. One of those methods
 knitr::include_graphics("figs/08-console.png")
 ```
 
-To get started, we will have R carry out some arithmetic. At the prompt enter each of the following lines of syntax. After each line, hit the <return> or <enter> key.
+To get started, we will have R carry out some arithmetic. At the prompt enter each of the following lines of syntax. After each line, hit the `<return>` or `<enter>` key.
 
 ```{r eval=FALSE}
 # Addition
@@ -69,14 +69,14 @@ To get started, we will have R carry out some arithmetic. At the prompt enter ea
 
 Executing each line of syntax returns the results of the computation in the console pane. The result, in R parlance, is referred to as a "returned value". After executing the computation, the R prompt reappears and you can issue a new line of syntax.
 
-**Continuation Prompt:** At some point in your computational career, you will likely encounter the continuation prompt. Symbolized by `+`, this prompt appears instead of the R prompt to indicate that you did not complete the syntax you entered prior to hitting the <enter> key. For example, suppose while entering the division syntax from above you got excited and hit the <enter> key after inputting the slash; before inputting the "2". You would see the continuation prompt:
+**Continuation Prompt:** At some point in your computational career, you will likely encounter the continuation prompt. Symbolized by `+`, this prompt appears instead of the R prompt to indicate that you did not complete the syntax you entered prior to hitting the <enter> key. For example, suppose while entering the division syntax from above you got excited and hit the `<enter>` key after inputting the slash; before inputting the `2`. You would see the continuation prompt:
 
 ```
 > 23 /
 + 
 ```
 
-The continuation prompt tells you that the syntax you started to enter is still active. If you now enter "2" and hit the <enter> key, the syntax will be executed as if you hadn't inadvertently hit <enter> in the middle of the computation. If you are in the middle of a more complex piece of syntax, you could also hit the <esc> key until the R prompt is re-shown. Then you can start the computation over.
+The continuation prompt tells you that the syntax you started to enter is still active. If you now enter `2` and hit the `<enter>` key, the syntax will be executed as if you had not inadvertently hit `<enter>` in the middle of the computation. If you are in the middle of a more complex piece of syntax, you could also hit the `<esc>` key until the R prompt is re-shown. Then you can start the computation over.
 
 **Space in Syntax:** For the computation in R, space is irrelevant. For example, each of the following syntactical statements is equivalent:
 
@@ -358,7 +358,7 @@ library(lme4)
 ```
 
 :::protip
-Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session.
+Once the package is loaded, all of the functions, data sets, etc. in that package are available to you. Packages will need to be loaded every time you launch a new R session. 
 :::
 
 <br /><br />
